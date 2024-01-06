@@ -1,0 +1,9 @@
+[submodule "code/lib/qymos-stm32-driver-m23cXX"]
+	path = code/lib/qymos-stm32-driver-m23cXX
+	url = https://github.com/basson/qymos-stm32-driver-m24cXX.git
+[submodule "code/lib/qymos-stm32-driver-ssd1309"]
+	path = code/lib/qymos-stm32-driver-ssd1309
+	url = https://github.com/basson/qymos-stm32-driver-ssd1309.git
+[submodule "code/lib/qymos-stm32-gui-monochrome"]
+	path = code/lib/qymos-stm32-gui-monochrome
+	url = https://github.com/basson/qymos-stm32-gui-monochrome.git
