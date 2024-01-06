@@ -1,0 +1,47 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "command": ".vscode/generate_mx_c.sh",
+            "args": [],
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "label": "CubeMX: Generate C"
+        },
+        {
+            "type": "shell",
+            "command": ".vscode/generate_mx_cpp.sh",
+            "args": [],
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "label": "CubeMX: Generate CPP"
+        },
+        {
+            "type": "shell",
+            "command": "mv",
+            "args": [
+                "./Src/main.cpp",
+                "./Src/main.c"
+            ],
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "label": "CubeMX: To Main C"
+        },
+        {
+            "type": "shell",
+            "command": "mv",
+            "args": [
+                "./Src/main.c",
+                "./Src/main.cpp"
+            ],
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "label": "CubeMX: To Main CPP"
+        },
+    ]
+}
