@@ -44,7 +44,7 @@
      } tFont;
 */
 
-#include "../lib/qymui/types.hpp"
+#include "../lib/qymos-stm32-gui-monochrome/types.hpp"
 
 
 
@@ -60,7 +60,7 @@ static const uint8_t image_data_HellenicaRus8px_0x20[3] = {
     // ∙∙∙
     0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x20 = { image_data_HellenicaRus8px_0x20,
+static const qymos::gui::tImage HellenicaRus8px_0x20 = { image_data_HellenicaRus8px_0x20,
     3, 8, 8, 3};
 #endif
 
@@ -76,7 +76,7 @@ static const uint8_t image_data_HellenicaRus8px_0x21[4] = {
     // ∙∙∙∙
     0x4e, 0xee, 0x40, 0x40
 };
-static const qymui::tImage HellenicaRus8px_0x21 = { image_data_HellenicaRus8px_0x21,
+static const qymos::gui::tImage HellenicaRus8px_0x21 = { image_data_HellenicaRus8px_0x21,
     4, 8, 8, 4};
 #endif
 
@@ -92,7 +92,7 @@ static const uint8_t image_data_HellenicaRus8px_0x22[4] = {
     // ∙∙∙∙
     0x0a, 0xaa, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x22 = { image_data_HellenicaRus8px_0x22,
+static const qymos::gui::tImage HellenicaRus8px_0x22 = { image_data_HellenicaRus8px_0x22,
     4, 8, 8, 4};
 #endif
 
@@ -108,7 +108,7 @@ static const uint8_t image_data_HellenicaRus8px_0x23[6] = {
     // ∙∙∙∙∙∙
     0x51, 0x4f, 0x94, 0xf9, 0x45, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x23 = { image_data_HellenicaRus8px_0x23,
+static const qymos::gui::tImage HellenicaRus8px_0x23 = { image_data_HellenicaRus8px_0x23,
     6, 8, 8, 6};
 #endif
 
@@ -124,7 +124,7 @@ static const uint8_t image_data_HellenicaRus8px_0x24[8] = {
     // ∙∙∙∙∙∙∙∙
     0x28, 0x7e, 0xa8, 0x7c, 0x2a, 0xfc, 0x28, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x24 = { image_data_HellenicaRus8px_0x24,
+static const qymos::gui::tImage HellenicaRus8px_0x24 = { image_data_HellenicaRus8px_0x24,
     8, 8, 8, 8};
 #endif
 
@@ -140,7 +140,7 @@ static const uint8_t image_data_HellenicaRus8px_0x25[6] = {
     // ∙∙∙∙∙∙
     0x61, 0x80, 0x1e, 0x00, 0x61, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x25 = { image_data_HellenicaRus8px_0x25,
+static const qymos::gui::tImage HellenicaRus8px_0x25 = { image_data_HellenicaRus8px_0x25,
     6, 8, 8, 6};
 #endif
 
@@ -156,7 +156,7 @@ static const uint8_t image_data_HellenicaRus8px_0x26[8] = {
     // ∙∙∙∙∙∙∙∙
     0x3e, 0x40, 0x40, 0x7e, 0x24, 0x24, 0x3c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x26 = { image_data_HellenicaRus8px_0x26,
+static const qymos::gui::tImage HellenicaRus8px_0x26 = { image_data_HellenicaRus8px_0x26,
     8, 8, 8, 8};
 #endif
 
@@ -172,7 +172,7 @@ static const uint8_t image_data_HellenicaRus8px_0x27[2] = {
     // ∙∙
     0x2a, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x27 = { image_data_HellenicaRus8px_0x27,
+static const qymos::gui::tImage HellenicaRus8px_0x27 = { image_data_HellenicaRus8px_0x27,
     2, 8, 8, 2};
 #endif
 
@@ -188,7 +188,7 @@ static const uint8_t image_data_HellenicaRus8px_0x28[4] = {
     // ∙∙∙∙
     0x24, 0x88, 0x84, 0x20
 };
-static const qymui::tImage HellenicaRus8px_0x28 = { image_data_HellenicaRus8px_0x28,
+static const qymos::gui::tImage HellenicaRus8px_0x28 = { image_data_HellenicaRus8px_0x28,
     4, 8, 8, 4};
 #endif
 
@@ -204,7 +204,7 @@ static const uint8_t image_data_HellenicaRus8px_0x29[4] = {
     // ∙∙∙∙
     0x84, 0x22, 0x24, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x29 = { image_data_HellenicaRus8px_0x29,
+static const qymos::gui::tImage HellenicaRus8px_0x29 = { image_data_HellenicaRus8px_0x29,
     4, 8, 8, 4};
 #endif
 
@@ -220,7 +220,7 @@ static const uint8_t image_data_HellenicaRus8px_0x2a[4] = {
     // ∙∙∙∙
     0x4e, 0x40, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x2a = { image_data_HellenicaRus8px_0x2a,
+static const qymos::gui::tImage HellenicaRus8px_0x2a = { image_data_HellenicaRus8px_0x2a,
     4, 8, 8, 4};
 #endif
 
@@ -236,7 +236,7 @@ static const uint8_t image_data_HellenicaRus8px_0x2b[8] = {
     // ∙∙∙∙∙∙∙∙
     0x10, 0x10, 0x10, 0xfe, 0x10, 0x10, 0x10, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x2b = { image_data_HellenicaRus8px_0x2b,
+static const qymos::gui::tImage HellenicaRus8px_0x2b = { image_data_HellenicaRus8px_0x2b,
     8, 8, 8, 8};
 #endif
 
@@ -252,7 +252,7 @@ static const uint8_t image_data_HellenicaRus8px_0x2c[2] = {
     // █∙
     0x00, 0x0a
 };
-static const qymui::tImage HellenicaRus8px_0x2c = { image_data_HellenicaRus8px_0x2c,
+static const qymos::gui::tImage HellenicaRus8px_0x2c = { image_data_HellenicaRus8px_0x2c,
     2, 8, 8, 2};
 #endif
 
@@ -268,7 +268,7 @@ static const uint8_t image_data_HellenicaRus8px_0x2d[7] = {
     // ∙∙∙∙∙∙∙
     0x00, 0x00, 0x07, 0xe0, 0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x2d = { image_data_HellenicaRus8px_0x2d,
+static const qymos::gui::tImage HellenicaRus8px_0x2d = { image_data_HellenicaRus8px_0x2d,
     7, 8, 8, 7};
 #endif
 
@@ -284,7 +284,7 @@ static const uint8_t image_data_HellenicaRus8px_0x2e[2] = {
     // ∙∙
     0x00, 0x08
 };
-static const qymui::tImage HellenicaRus8px_0x2e = { image_data_HellenicaRus8px_0x2e,
+static const qymos::gui::tImage HellenicaRus8px_0x2e = { image_data_HellenicaRus8px_0x2e,
     2, 8, 8, 2};
 #endif
 
@@ -300,7 +300,7 @@ static const uint8_t image_data_HellenicaRus8px_0x2f[7] = {
     // ∙∙∙∙∙∙∙
     0x00, 0x08, 0x20, 0x82, 0x08, 0x20, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x2f = { image_data_HellenicaRus8px_0x2f,
+static const qymos::gui::tImage HellenicaRus8px_0x2f = { image_data_HellenicaRus8px_0x2f,
     7, 8, 8, 7};
 #endif
 
@@ -316,7 +316,7 @@ static const uint8_t image_data_HellenicaRus8px_0x30[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x28, 0x49, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x30 = { image_data_HellenicaRus8px_0x30,
+static const qymos::gui::tImage HellenicaRus8px_0x30 = { image_data_HellenicaRus8px_0x30,
     7, 8, 8, 7};
 #endif
 
@@ -332,7 +332,7 @@ static const uint8_t image_data_HellenicaRus8px_0x31[6] = {
     // ∙∙∙∙∙∙
     0xe0, 0x82, 0x08, 0x20, 0x8f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x31 = { image_data_HellenicaRus8px_0x31,
+static const qymos::gui::tImage HellenicaRus8px_0x31 = { image_data_HellenicaRus8px_0x31,
     6, 8, 8, 6};
 #endif
 
@@ -348,7 +348,7 @@ static const uint8_t image_data_HellenicaRus8px_0x32[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x20, 0x9e, 0x82, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x32 = { image_data_HellenicaRus8px_0x32,
+static const qymos::gui::tImage HellenicaRus8px_0x32 = { image_data_HellenicaRus8px_0x32,
     6, 8, 8, 6};
 #endif
 
@@ -364,7 +364,7 @@ static const uint8_t image_data_HellenicaRus8px_0x33[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x20, 0xbe, 0x08, 0x2f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x33 = { image_data_HellenicaRus8px_0x33,
+static const qymos::gui::tImage HellenicaRus8px_0x33 = { image_data_HellenicaRus8px_0x33,
     6, 8, 8, 6};
 #endif
 
@@ -380,7 +380,7 @@ static const uint8_t image_data_HellenicaRus8px_0x34[6] = {
     // ∙∙∙∙∙∙
     0x92, 0x49, 0x24, 0xf8, 0x41, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x34 = { image_data_HellenicaRus8px_0x34,
+static const qymos::gui::tImage HellenicaRus8px_0x34 = { image_data_HellenicaRus8px_0x34,
     6, 8, 8, 6};
 #endif
 
@@ -396,7 +396,7 @@ static const uint8_t image_data_HellenicaRus8px_0x35[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3e, 0x08, 0x2f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x35 = { image_data_HellenicaRus8px_0x35,
+static const qymos::gui::tImage HellenicaRus8px_0x35 = { image_data_HellenicaRus8px_0x35,
     6, 8, 8, 6};
 #endif
 
@@ -412,7 +412,7 @@ static const uint8_t image_data_HellenicaRus8px_0x36[6] = {
     // ∙∙∙∙∙∙
     0x7a, 0x08, 0x3e, 0x8a, 0x2f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x36 = { image_data_HellenicaRus8px_0x36,
+static const qymos::gui::tImage HellenicaRus8px_0x36 = { image_data_HellenicaRus8px_0x36,
     6, 8, 8, 6};
 #endif
 
@@ -428,7 +428,7 @@ static const uint8_t image_data_HellenicaRus8px_0x37[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x21, 0x08, 0x41, 0x04, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x37 = { image_data_HellenicaRus8px_0x37,
+static const qymos::gui::tImage HellenicaRus8px_0x37 = { image_data_HellenicaRus8px_0x37,
     6, 8, 8, 6};
 #endif
 
@@ -444,7 +444,7 @@ static const uint8_t image_data_HellenicaRus8px_0x38[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x9c, 0x8a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x38 = { image_data_HellenicaRus8px_0x38,
+static const qymos::gui::tImage HellenicaRus8px_0x38 = { image_data_HellenicaRus8px_0x38,
     6, 8, 8, 6};
 #endif
 
@@ -460,7 +460,7 @@ static const uint8_t image_data_HellenicaRus8px_0x39[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x9e, 0x08, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x39 = { image_data_HellenicaRus8px_0x39,
+static const qymos::gui::tImage HellenicaRus8px_0x39 = { image_data_HellenicaRus8px_0x39,
     6, 8, 8, 6};
 #endif
 
@@ -476,7 +476,7 @@ static const uint8_t image_data_HellenicaRus8px_0x3a[2] = {
     // ∙∙
     0x20, 0x08
 };
-static const qymui::tImage HellenicaRus8px_0x3a = { image_data_HellenicaRus8px_0x3a,
+static const qymos::gui::tImage HellenicaRus8px_0x3a = { image_data_HellenicaRus8px_0x3a,
     2, 8, 8, 2};
 #endif
 
@@ -492,7 +492,7 @@ static const uint8_t image_data_HellenicaRus8px_0x3b[2] = {
     // ∙∙
     0x20, 0x28
 };
-static const qymui::tImage HellenicaRus8px_0x3b = { image_data_HellenicaRus8px_0x3b,
+static const qymos::gui::tImage HellenicaRus8px_0x3b = { image_data_HellenicaRus8px_0x3b,
     2, 8, 8, 2};
 #endif
 
@@ -508,7 +508,7 @@ static const uint8_t image_data_HellenicaRus8px_0x3c[5] = {
     // ∙∙∙∙∙
     0x11, 0x11, 0x04, 0x10, 0x40
 };
-static const qymui::tImage HellenicaRus8px_0x3c = { image_data_HellenicaRus8px_0x3c,
+static const qymos::gui::tImage HellenicaRus8px_0x3c = { image_data_HellenicaRus8px_0x3c,
     5, 8, 8, 5};
 #endif
 
@@ -524,7 +524,7 @@ static const uint8_t image_data_HellenicaRus8px_0x3d[6] = {
     // ∙∙∙∙∙∙
     0x00, 0x0f, 0x80, 0xf8, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x3d = { image_data_HellenicaRus8px_0x3d,
+static const qymos::gui::tImage HellenicaRus8px_0x3d = { image_data_HellenicaRus8px_0x3d,
     6, 8, 8, 6};
 #endif
 
@@ -540,7 +540,7 @@ static const uint8_t image_data_HellenicaRus8px_0x3e[5] = {
     // ∙∙∙∙∙
     0x82, 0x08, 0x22, 0x22, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x3e = { image_data_HellenicaRus8px_0x3e,
+static const qymos::gui::tImage HellenicaRus8px_0x3e = { image_data_HellenicaRus8px_0x3e,
     5, 8, 8, 5};
 #endif
 
@@ -556,7 +556,7 @@ static const uint8_t image_data_HellenicaRus8px_0x3f[8] = {
     // ∙∙∙∙∙∙∙∙
     0x7c, 0x82, 0x82, 0x0c, 0x10, 0x00, 0x10, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x3f = { image_data_HellenicaRus8px_0x3f,
+static const qymos::gui::tImage HellenicaRus8px_0x3f = { image_data_HellenicaRus8px_0x3f,
     8, 8, 8, 8};
 #endif
 
@@ -572,7 +572,7 @@ static const uint8_t image_data_HellenicaRus8px_0x40[7] = {
     // ∙∙∙∙∙∙∙
     0x79, 0x0a, 0xd5, 0x4b, 0x10, 0x3f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x40 = { image_data_HellenicaRus8px_0x40,
+static const qymos::gui::tImage HellenicaRus8px_0x40 = { image_data_HellenicaRus8px_0x40,
     7, 8, 8, 7};
 #endif
 
@@ -588,7 +588,7 @@ static const uint8_t image_data_HellenicaRus8px_0x41[6] = {
     // ∙∙∙∙∙∙
     0x21, 0x48, 0xa2, 0xfa, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x41 = { image_data_HellenicaRus8px_0x41,
+static const qymos::gui::tImage HellenicaRus8px_0x41 = { image_data_HellenicaRus8px_0x41,
     6, 8, 8, 6};
 #endif
 
@@ -604,7 +604,7 @@ static const uint8_t image_data_HellenicaRus8px_0x42[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x42 = { image_data_HellenicaRus8px_0x42,
+static const qymos::gui::tImage HellenicaRus8px_0x42 = { image_data_HellenicaRus8px_0x42,
     6, 8, 8, 6};
 #endif
 
@@ -620,7 +620,7 @@ static const uint8_t image_data_HellenicaRus8px_0x43[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x20, 0x82, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x43 = { image_data_HellenicaRus8px_0x43,
+static const qymos::gui::tImage HellenicaRus8px_0x43 = { image_data_HellenicaRus8px_0x43,
     6, 8, 8, 6};
 #endif
 
@@ -636,7 +636,7 @@ static const uint8_t image_data_HellenicaRus8px_0x44[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xa2, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x44 = { image_data_HellenicaRus8px_0x44,
+static const qymos::gui::tImage HellenicaRus8px_0x44 = { image_data_HellenicaRus8px_0x44,
     6, 8, 8, 6};
 #endif
 
@@ -652,7 +652,7 @@ static const uint8_t image_data_HellenicaRus8px_0x45[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x82, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x45 = { image_data_HellenicaRus8px_0x45,
+static const qymos::gui::tImage HellenicaRus8px_0x45 = { image_data_HellenicaRus8px_0x45,
     6, 8, 8, 6};
 #endif
 
@@ -668,7 +668,7 @@ static const uint8_t image_data_HellenicaRus8px_0x46[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x82, 0x08, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x46 = { image_data_HellenicaRus8px_0x46,
+static const qymos::gui::tImage HellenicaRus8px_0x46 = { image_data_HellenicaRus8px_0x46,
     6, 8, 8, 6};
 #endif
 
@@ -684,7 +684,7 @@ static const uint8_t image_data_HellenicaRus8px_0x47[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x2e, 0x8a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x47 = { image_data_HellenicaRus8px_0x47,
+static const qymos::gui::tImage HellenicaRus8px_0x47 = { image_data_HellenicaRus8px_0x47,
     6, 8, 8, 6};
 #endif
 
@@ -700,7 +700,7 @@ static const uint8_t image_data_HellenicaRus8px_0x48[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xbe, 0x8a, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x48 = { image_data_HellenicaRus8px_0x48,
+static const qymos::gui::tImage HellenicaRus8px_0x48 = { image_data_HellenicaRus8px_0x48,
     6, 8, 8, 6};
 #endif
 
@@ -716,7 +716,7 @@ static const uint8_t image_data_HellenicaRus8px_0x49[4] = {
     // ∙∙∙∙
     0xe4, 0x44, 0x44, 0xe0
 };
-static const qymui::tImage HellenicaRus8px_0x49 = { image_data_HellenicaRus8px_0x49,
+static const qymos::gui::tImage HellenicaRus8px_0x49 = { image_data_HellenicaRus8px_0x49,
     4, 8, 8, 4};
 #endif
 
@@ -732,7 +732,7 @@ static const uint8_t image_data_HellenicaRus8px_0x4a[6] = {
     // ∙∙∙∙∙∙
     0x78, 0x20, 0x82, 0x8a, 0x47, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x4a = { image_data_HellenicaRus8px_0x4a,
+static const qymos::gui::tImage HellenicaRus8px_0x4a = { image_data_HellenicaRus8px_0x4a,
     6, 8, 8, 6};
 #endif
 
@@ -748,7 +748,7 @@ static const uint8_t image_data_HellenicaRus8px_0x4b[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x4a, 0x30, 0xa2, 0x48, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x4b = { image_data_HellenicaRus8px_0x4b,
+static const qymos::gui::tImage HellenicaRus8px_0x4b = { image_data_HellenicaRus8px_0x4b,
     6, 8, 8, 6};
 #endif
 
@@ -764,7 +764,7 @@ static const uint8_t image_data_HellenicaRus8px_0x4c[5] = {
     // ∙∙∙∙∙
     0x84, 0x21, 0x08, 0x43, 0xc0
 };
-static const qymui::tImage HellenicaRus8px_0x4c = { image_data_HellenicaRus8px_0x4c,
+static const qymos::gui::tImage HellenicaRus8px_0x4c = { image_data_HellenicaRus8px_0x4c,
     5, 8, 8, 5};
 #endif
 
@@ -780,7 +780,7 @@ static const uint8_t image_data_HellenicaRus8px_0x4d[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0b, 0x35, 0xab, 0x50, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x4d = { image_data_HellenicaRus8px_0x4d,
+static const qymos::gui::tImage HellenicaRus8px_0x4d = { image_data_HellenicaRus8px_0x4d,
     7, 8, 8, 7};
 #endif
 
@@ -796,7 +796,7 @@ static const uint8_t image_data_HellenicaRus8px_0x4e[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0b, 0x15, 0x29, 0x51, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x4e = { image_data_HellenicaRus8px_0x4e,
+static const qymos::gui::tImage HellenicaRus8px_0x4e = { image_data_HellenicaRus8px_0x4e,
     7, 8, 8, 7};
 #endif
 
@@ -812,7 +812,7 @@ static const uint8_t image_data_HellenicaRus8px_0x4f[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x28, 0x49, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x4f = { image_data_HellenicaRus8px_0x4f,
+static const qymos::gui::tImage HellenicaRus8px_0x4f = { image_data_HellenicaRus8px_0x4f,
     7, 8, 8, 7};
 #endif
 
@@ -828,7 +828,7 @@ static const uint8_t image_data_HellenicaRus8px_0x50[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x82, 0x08, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x50 = { image_data_HellenicaRus8px_0x50,
+static const qymos::gui::tImage HellenicaRus8px_0x50 = { image_data_HellenicaRus8px_0x50,
     6, 8, 8, 6};
 #endif
 
@@ -844,7 +844,7 @@ static const uint8_t image_data_HellenicaRus8px_0x51[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x29, 0x49, 0x0d, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x51 = { image_data_HellenicaRus8px_0x51,
+static const qymos::gui::tImage HellenicaRus8px_0x51 = { image_data_HellenicaRus8px_0x51,
     7, 8, 8, 7};
 #endif
 
@@ -860,7 +860,7 @@ static const uint8_t image_data_HellenicaRus8px_0x52[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x28, 0xbe, 0xa2, 0x89, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x52 = { image_data_HellenicaRus8px_0x52,
+static const qymos::gui::tImage HellenicaRus8px_0x52 = { image_data_HellenicaRus8px_0x52,
     6, 8, 8, 6};
 #endif
 
@@ -876,7 +876,7 @@ static const uint8_t image_data_HellenicaRus8px_0x53[6] = {
     // ∙∙∙∙∙∙
     0x7a, 0x08, 0x1e, 0x08, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x53 = { image_data_HellenicaRus8px_0x53,
+static const qymos::gui::tImage HellenicaRus8px_0x53 = { image_data_HellenicaRus8px_0x53,
     6, 8, 8, 6};
 #endif
 
@@ -892,7 +892,7 @@ static const uint8_t image_data_HellenicaRus8px_0x54[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x82, 0x08, 0x20, 0x82, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x54 = { image_data_HellenicaRus8px_0x54,
+static const qymos::gui::tImage HellenicaRus8px_0x54 = { image_data_HellenicaRus8px_0x54,
     6, 8, 8, 6};
 #endif
 
@@ -908,7 +908,7 @@ static const uint8_t image_data_HellenicaRus8px_0x55[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xa2, 0x8a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x55 = { image_data_HellenicaRus8px_0x55,
+static const qymos::gui::tImage HellenicaRus8px_0x55 = { image_data_HellenicaRus8px_0x55,
     6, 8, 8, 6};
 #endif
 
@@ -924,7 +924,7 @@ static const uint8_t image_data_HellenicaRus8px_0x56[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xa2, 0x51, 0x42, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x56 = { image_data_HellenicaRus8px_0x56,
+static const qymos::gui::tImage HellenicaRus8px_0x56 = { image_data_HellenicaRus8px_0x56,
     6, 8, 8, 6};
 #endif
 
@@ -940,7 +940,7 @@ static const uint8_t image_data_HellenicaRus8px_0x57[8] = {
     // ∙∙∙∙∙∙∙∙
     0x82, 0x82, 0x82, 0x92, 0xaa, 0xc6, 0x82, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x57 = { image_data_HellenicaRus8px_0x57,
+static const qymos::gui::tImage HellenicaRus8px_0x57 = { image_data_HellenicaRus8px_0x57,
     8, 8, 8, 8};
 #endif
 
@@ -956,7 +956,7 @@ static const uint8_t image_data_HellenicaRus8px_0x58[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x25, 0x08, 0x52, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x58 = { image_data_HellenicaRus8px_0x58,
+static const qymos::gui::tImage HellenicaRus8px_0x58 = { image_data_HellenicaRus8px_0x58,
     6, 8, 8, 6};
 #endif
 
@@ -972,7 +972,7 @@ static const uint8_t image_data_HellenicaRus8px_0x59[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0x9e, 0x08, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x59 = { image_data_HellenicaRus8px_0x59,
+static const qymos::gui::tImage HellenicaRus8px_0x59 = { image_data_HellenicaRus8px_0x59,
     6, 8, 8, 6};
 #endif
 
@@ -988,7 +988,7 @@ static const uint8_t image_data_HellenicaRus8px_0x5a[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x21, 0x08, 0x42, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x5a = { image_data_HellenicaRus8px_0x5a,
+static const qymos::gui::tImage HellenicaRus8px_0x5a = { image_data_HellenicaRus8px_0x5a,
     6, 8, 8, 6};
 #endif
 
@@ -1004,7 +1004,7 @@ static const uint8_t image_data_HellenicaRus8px_0x5b[3] = {
     // ∙∙∙
     0xd2, 0x49, 0x30
 };
-static const qymui::tImage HellenicaRus8px_0x5b = { image_data_HellenicaRus8px_0x5b,
+static const qymos::gui::tImage HellenicaRus8px_0x5b = { image_data_HellenicaRus8px_0x5b,
     3, 8, 8, 3};
 #endif
 
@@ -1020,7 +1020,7 @@ static const uint8_t image_data_HellenicaRus8px_0x5c[7] = {
     // ∙∙∙∙∙∙∙
     0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x5c = { image_data_HellenicaRus8px_0x5c,
+static const qymos::gui::tImage HellenicaRus8px_0x5c = { image_data_HellenicaRus8px_0x5c,
     7, 8, 8, 7};
 #endif
 
@@ -1036,7 +1036,7 @@ static const uint8_t image_data_HellenicaRus8px_0x5d[3] = {
     // ∙∙∙
     0xc9, 0x24, 0xb0
 };
-static const qymui::tImage HellenicaRus8px_0x5d = { image_data_HellenicaRus8px_0x5d,
+static const qymos::gui::tImage HellenicaRus8px_0x5d = { image_data_HellenicaRus8px_0x5d,
     3, 8, 8, 3};
 #endif
 
@@ -1052,7 +1052,7 @@ static const uint8_t image_data_HellenicaRus8px_0x5e[4] = {
     // ∙∙∙∙
     0x4a, 0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x5e = { image_data_HellenicaRus8px_0x5e,
+static const qymos::gui::tImage HellenicaRus8px_0x5e = { image_data_HellenicaRus8px_0x5e,
     4, 8, 8, 4};
 #endif
 
@@ -1068,7 +1068,7 @@ static const uint8_t image_data_HellenicaRus8px_0x5f[7] = {
     // ∙∙∙∙∙∙∙
     0x00, 0x00, 0x00, 0x00, 0x00, 0x3f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x5f = { image_data_HellenicaRus8px_0x5f,
+static const qymos::gui::tImage HellenicaRus8px_0x5f = { image_data_HellenicaRus8px_0x5f,
     7, 8, 8, 7};
 #endif
 
@@ -1084,7 +1084,7 @@ static const uint8_t image_data_HellenicaRus8px_0x60[3] = {
     // ∙∙∙
     0x11, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x60 = { image_data_HellenicaRus8px_0x60,
+static const qymos::gui::tImage HellenicaRus8px_0x60 = { image_data_HellenicaRus8px_0x60,
     3, 8, 8, 3};
 #endif
 
@@ -1100,7 +1100,7 @@ static const uint8_t image_data_HellenicaRus8px_0x61[6] = {
     // ∙∙∙∙∙∙
     0x21, 0x48, 0xa2, 0xfa, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x61 = { image_data_HellenicaRus8px_0x61,
+static const qymos::gui::tImage HellenicaRus8px_0x61 = { image_data_HellenicaRus8px_0x61,
     6, 8, 8, 6};
 #endif
 
@@ -1116,7 +1116,7 @@ static const uint8_t image_data_HellenicaRus8px_0x62[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x62 = { image_data_HellenicaRus8px_0x62,
+static const qymos::gui::tImage HellenicaRus8px_0x62 = { image_data_HellenicaRus8px_0x62,
     6, 8, 8, 6};
 #endif
 
@@ -1132,7 +1132,7 @@ static const uint8_t image_data_HellenicaRus8px_0x63[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x20, 0x82, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x63 = { image_data_HellenicaRus8px_0x63,
+static const qymos::gui::tImage HellenicaRus8px_0x63 = { image_data_HellenicaRus8px_0x63,
     6, 8, 8, 6};
 #endif
 
@@ -1148,7 +1148,7 @@ static const uint8_t image_data_HellenicaRus8px_0x64[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xa2, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x64 = { image_data_HellenicaRus8px_0x64,
+static const qymos::gui::tImage HellenicaRus8px_0x64 = { image_data_HellenicaRus8px_0x64,
     6, 8, 8, 6};
 #endif
 
@@ -1164,7 +1164,7 @@ static const uint8_t image_data_HellenicaRus8px_0x65[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x82, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x65 = { image_data_HellenicaRus8px_0x65,
+static const qymos::gui::tImage HellenicaRus8px_0x65 = { image_data_HellenicaRus8px_0x65,
     6, 8, 8, 6};
 #endif
 
@@ -1180,7 +1180,7 @@ static const uint8_t image_data_HellenicaRus8px_0x66[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x82, 0x08, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x66 = { image_data_HellenicaRus8px_0x66,
+static const qymos::gui::tImage HellenicaRus8px_0x66 = { image_data_HellenicaRus8px_0x66,
     6, 8, 8, 6};
 #endif
 
@@ -1196,7 +1196,7 @@ static const uint8_t image_data_HellenicaRus8px_0x67[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x2e, 0x8a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x67 = { image_data_HellenicaRus8px_0x67,
+static const qymos::gui::tImage HellenicaRus8px_0x67 = { image_data_HellenicaRus8px_0x67,
     6, 8, 8, 6};
 #endif
 
@@ -1212,7 +1212,7 @@ static const uint8_t image_data_HellenicaRus8px_0x68[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xbe, 0x8a, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x68 = { image_data_HellenicaRus8px_0x68,
+static const qymos::gui::tImage HellenicaRus8px_0x68 = { image_data_HellenicaRus8px_0x68,
     6, 8, 8, 6};
 #endif
 
@@ -1228,7 +1228,7 @@ static const uint8_t image_data_HellenicaRus8px_0x69[4] = {
     // ∙∙∙∙
     0xe4, 0x44, 0x44, 0xe0
 };
-static const qymui::tImage HellenicaRus8px_0x69 = { image_data_HellenicaRus8px_0x69,
+static const qymos::gui::tImage HellenicaRus8px_0x69 = { image_data_HellenicaRus8px_0x69,
     4, 8, 8, 4};
 #endif
 
@@ -1244,7 +1244,7 @@ static const uint8_t image_data_HellenicaRus8px_0x6a[6] = {
     // ∙∙∙∙∙∙
     0x78, 0x20, 0x82, 0x8a, 0x47, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x6a = { image_data_HellenicaRus8px_0x6a,
+static const qymos::gui::tImage HellenicaRus8px_0x6a = { image_data_HellenicaRus8px_0x6a,
     6, 8, 8, 6};
 #endif
 
@@ -1260,7 +1260,7 @@ static const uint8_t image_data_HellenicaRus8px_0x6b[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x4a, 0x30, 0xa2, 0x48, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x6b = { image_data_HellenicaRus8px_0x6b,
+static const qymos::gui::tImage HellenicaRus8px_0x6b = { image_data_HellenicaRus8px_0x6b,
     6, 8, 8, 6};
 #endif
 
@@ -1276,7 +1276,7 @@ static const uint8_t image_data_HellenicaRus8px_0x6c[5] = {
     // ∙∙∙∙∙
     0x84, 0x21, 0x08, 0x43, 0xc0
 };
-static const qymui::tImage HellenicaRus8px_0x6c = { image_data_HellenicaRus8px_0x6c,
+static const qymos::gui::tImage HellenicaRus8px_0x6c = { image_data_HellenicaRus8px_0x6c,
     5, 8, 8, 5};
 #endif
 
@@ -1292,7 +1292,7 @@ static const uint8_t image_data_HellenicaRus8px_0x6d[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0b, 0x35, 0xab, 0x50, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x6d = { image_data_HellenicaRus8px_0x6d,
+static const qymos::gui::tImage HellenicaRus8px_0x6d = { image_data_HellenicaRus8px_0x6d,
     7, 8, 8, 7};
 #endif
 
@@ -1308,7 +1308,7 @@ static const uint8_t image_data_HellenicaRus8px_0x6e[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0b, 0x15, 0x29, 0x51, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x6e = { image_data_HellenicaRus8px_0x6e,
+static const qymos::gui::tImage HellenicaRus8px_0x6e = { image_data_HellenicaRus8px_0x6e,
     7, 8, 8, 7};
 #endif
 
@@ -1324,7 +1324,7 @@ static const uint8_t image_data_HellenicaRus8px_0x6f[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x28, 0x49, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x6f = { image_data_HellenicaRus8px_0x6f,
+static const qymos::gui::tImage HellenicaRus8px_0x6f = { image_data_HellenicaRus8px_0x6f,
     7, 8, 8, 7};
 #endif
 
@@ -1340,7 +1340,7 @@ static const uint8_t image_data_HellenicaRus8px_0x70[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x82, 0x08, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x70 = { image_data_HellenicaRus8px_0x70,
+static const qymos::gui::tImage HellenicaRus8px_0x70 = { image_data_HellenicaRus8px_0x70,
     6, 8, 8, 6};
 #endif
 
@@ -1356,7 +1356,7 @@ static const uint8_t image_data_HellenicaRus8px_0x71[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x29, 0x49, 0x0d, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x71 = { image_data_HellenicaRus8px_0x71,
+static const qymos::gui::tImage HellenicaRus8px_0x71 = { image_data_HellenicaRus8px_0x71,
     7, 8, 8, 7};
 #endif
 
@@ -1372,7 +1372,7 @@ static const uint8_t image_data_HellenicaRus8px_0x72[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x28, 0xbe, 0xa2, 0x89, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x72 = { image_data_HellenicaRus8px_0x72,
+static const qymos::gui::tImage HellenicaRus8px_0x72 = { image_data_HellenicaRus8px_0x72,
     6, 8, 8, 6};
 #endif
 
@@ -1388,7 +1388,7 @@ static const uint8_t image_data_HellenicaRus8px_0x73[6] = {
     // ∙∙∙∙∙∙
     0x7a, 0x08, 0x1e, 0x08, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x73 = { image_data_HellenicaRus8px_0x73,
+static const qymos::gui::tImage HellenicaRus8px_0x73 = { image_data_HellenicaRus8px_0x73,
     6, 8, 8, 6};
 #endif
 
@@ -1404,7 +1404,7 @@ static const uint8_t image_data_HellenicaRus8px_0x74[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x82, 0x08, 0x20, 0x82, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x74 = { image_data_HellenicaRus8px_0x74,
+static const qymos::gui::tImage HellenicaRus8px_0x74 = { image_data_HellenicaRus8px_0x74,
     6, 8, 8, 6};
 #endif
 
@@ -1420,7 +1420,7 @@ static const uint8_t image_data_HellenicaRus8px_0x75[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xa2, 0x8a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x75 = { image_data_HellenicaRus8px_0x75,
+static const qymos::gui::tImage HellenicaRus8px_0x75 = { image_data_HellenicaRus8px_0x75,
     6, 8, 8, 6};
 #endif
 
@@ -1436,7 +1436,7 @@ static const uint8_t image_data_HellenicaRus8px_0x76[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xa2, 0x51, 0x42, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x76 = { image_data_HellenicaRus8px_0x76,
+static const qymos::gui::tImage HellenicaRus8px_0x76 = { image_data_HellenicaRus8px_0x76,
     6, 8, 8, 6};
 #endif
 
@@ -1452,7 +1452,7 @@ static const uint8_t image_data_HellenicaRus8px_0x77[8] = {
     // ∙∙∙∙∙∙∙∙
     0x82, 0x82, 0x82, 0x92, 0xaa, 0xc6, 0x82, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x77 = { image_data_HellenicaRus8px_0x77,
+static const qymos::gui::tImage HellenicaRus8px_0x77 = { image_data_HellenicaRus8px_0x77,
     8, 8, 8, 8};
 #endif
 
@@ -1468,7 +1468,7 @@ static const uint8_t image_data_HellenicaRus8px_0x78[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x25, 0x08, 0x52, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x78 = { image_data_HellenicaRus8px_0x78,
+static const qymos::gui::tImage HellenicaRus8px_0x78 = { image_data_HellenicaRus8px_0x78,
     6, 8, 8, 6};
 #endif
 
@@ -1484,7 +1484,7 @@ static const uint8_t image_data_HellenicaRus8px_0x79[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0x9e, 0x08, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x79 = { image_data_HellenicaRus8px_0x79,
+static const qymos::gui::tImage HellenicaRus8px_0x79 = { image_data_HellenicaRus8px_0x79,
     6, 8, 8, 6};
 #endif
 
@@ -1500,7 +1500,7 @@ static const uint8_t image_data_HellenicaRus8px_0x7a[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x21, 0x08, 0x42, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0x7a = { image_data_HellenicaRus8px_0x7a,
+static const qymos::gui::tImage HellenicaRus8px_0x7a = { image_data_HellenicaRus8px_0x7a,
     6, 8, 8, 6};
 #endif
 
@@ -1516,7 +1516,7 @@ static const uint8_t image_data_HellenicaRus8px_0x7b[4] = {
     // ∙∙∙∙
     0x64, 0x4c, 0x44, 0x60
 };
-static const qymui::tImage HellenicaRus8px_0x7b = { image_data_HellenicaRus8px_0x7b,
+static const qymos::gui::tImage HellenicaRus8px_0x7b = { image_data_HellenicaRus8px_0x7b,
     4, 8, 8, 4};
 #endif
 
@@ -1532,7 +1532,7 @@ static const uint8_t image_data_HellenicaRus8px_0x7c[2] = {
     // █∙
     0xaa, 0xaa
 };
-static const qymui::tImage HellenicaRus8px_0x7c = { image_data_HellenicaRus8px_0x7c,
+static const qymos::gui::tImage HellenicaRus8px_0x7c = { image_data_HellenicaRus8px_0x7c,
     2, 8, 8, 2};
 #endif
 
@@ -1548,7 +1548,7 @@ static const uint8_t image_data_HellenicaRus8px_0x7d[4] = {
     // ∙∙∙∙
     0x62, 0x23, 0x22, 0x60
 };
-static const qymui::tImage HellenicaRus8px_0x7d = { image_data_HellenicaRus8px_0x7d,
+static const qymos::gui::tImage HellenicaRus8px_0x7d = { image_data_HellenicaRus8px_0x7d,
     4, 8, 8, 4};
 #endif
 
@@ -1564,7 +1564,7 @@ static const uint8_t image_data_HellenicaRus8px_0x7e[7] = {
     // ∙∙∙∙∙∙∙
     0x00, 0x00, 0x03, 0x29, 0x80, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0x7e = { image_data_HellenicaRus8px_0x7e,
+static const qymos::gui::tImage HellenicaRus8px_0x7e = { image_data_HellenicaRus8px_0x7e,
     7, 8, 8, 7};
 #endif
 
@@ -1580,7 +1580,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc2b0[5] = {
     // ∙∙∙∙∙
     0x72, 0x9c, 0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc2b0 = { image_data_HellenicaRus8px_0xc2b0,
+static const qymos::gui::tImage HellenicaRus8px_0xc2b0 = { image_data_HellenicaRus8px_0xc2b0,
     5, 8, 8, 5};
 #endif
 
@@ -1596,7 +1596,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc380[8] = {
     // ∙∙∙∙∙∙∙∙
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc380 = { image_data_HellenicaRus8px_0xc380,
+static const qymos::gui::tImage HellenicaRus8px_0xc380 = { image_data_HellenicaRus8px_0xc380,
     8, 8, 8, 8};
 #endif
 
@@ -1612,7 +1612,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc381[8] = {
     // ∙∙∙∙∙∙∙∙
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc381 = { image_data_HellenicaRus8px_0xc381,
+static const qymos::gui::tImage HellenicaRus8px_0xc381 = { image_data_HellenicaRus8px_0xc381,
     8, 8, 8, 8};
 #endif
 
@@ -1628,7 +1628,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc382[8] = {
     // ∙∙∙∙∙∙∙∙
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc382 = { image_data_HellenicaRus8px_0xc382,
+static const qymos::gui::tImage HellenicaRus8px_0xc382 = { image_data_HellenicaRus8px_0xc382,
     8, 8, 8, 8};
 #endif
 
@@ -1644,7 +1644,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc383[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x69, 0xd6, 0x9e, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc383 = { image_data_HellenicaRus8px_0xc383,
+static const qymos::gui::tImage HellenicaRus8px_0xc383 = { image_data_HellenicaRus8px_0xc383,
     7, 8, 8, 7};
 #endif
 
@@ -1660,7 +1660,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc384[9] = {
     // ∙∙∙∙∙∙∙∙∙
     0xe7, 0x52, 0xaf, 0x50, 0x26, 0x61, 0xe0, 0x60, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc384 = { image_data_HellenicaRus8px_0xc384,
+static const qymos::gui::tImage HellenicaRus8px_0xc384 = { image_data_HellenicaRus8px_0xc384,
     9, 8, 8, 9};
 #endif
 
@@ -1676,7 +1676,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc385[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0xc3, 0x07, 0xe0, 0xc3, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc385 = { image_data_HellenicaRus8px_0xc385,
+static const qymos::gui::tImage HellenicaRus8px_0xc385 = { image_data_HellenicaRus8px_0xc385,
     7, 8, 8, 7};
 #endif
 
@@ -1692,7 +1692,7 @@ static const uint8_t image_data_HellenicaRus8px_0xc386[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x15, 0xa9, 0x49, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xc386 = { image_data_HellenicaRus8px_0xc386,
+static const qymos::gui::tImage HellenicaRus8px_0xc386 = { image_data_HellenicaRus8px_0xc386,
     7, 8, 8, 7};
 #endif
 
@@ -1708,7 +1708,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd090[6] = {
     // ∙∙∙∙∙∙
     0x21, 0x48, 0xa2, 0xfa, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd090 = { image_data_HellenicaRus8px_0xd090,
+static const qymos::gui::tImage HellenicaRus8px_0xd090 = { image_data_HellenicaRus8px_0xd090,
     6, 8, 8, 6};
 #endif
 
@@ -1724,7 +1724,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd091[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd091 = { image_data_HellenicaRus8px_0xd091,
+static const qymos::gui::tImage HellenicaRus8px_0xd091 = { image_data_HellenicaRus8px_0xd091,
     6, 8, 8, 6};
 #endif
 
@@ -1740,7 +1740,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd092[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd092 = { image_data_HellenicaRus8px_0xd092,
+static const qymos::gui::tImage HellenicaRus8px_0xd092 = { image_data_HellenicaRus8px_0xd092,
     6, 8, 8, 6};
 #endif
 
@@ -1756,7 +1756,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd093[5] = {
     // ∙∙∙∙∙
     0xf4, 0x21, 0x08, 0x42, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd093 = { image_data_HellenicaRus8px_0xd093,
+static const qymos::gui::tImage HellenicaRus8px_0xd093 = { image_data_HellenicaRus8px_0xd093,
     5, 8, 8, 5};
 #endif
 
@@ -1772,7 +1772,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd094[7] = {
     // █∙∙∙∙█∙
     0x38, 0x91, 0x22, 0x44, 0x89, 0x3f, 0x42
 };
-static const qymui::tImage HellenicaRus8px_0xd094 = { image_data_HellenicaRus8px_0xd094,
+static const qymos::gui::tImage HellenicaRus8px_0xd094 = { image_data_HellenicaRus8px_0xd094,
     7, 8, 8, 7};
 #endif
 
@@ -1788,7 +1788,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd095[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x82, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd095 = { image_data_HellenicaRus8px_0xd095,
+static const qymos::gui::tImage HellenicaRus8px_0xd095 = { image_data_HellenicaRus8px_0xd095,
     6, 8, 8, 6};
 #endif
 
@@ -1804,7 +1804,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd096[10] = {
     // ∙∙∙∙∙∙∙∙∙∙
     0x88, 0x92, 0x42, 0xa0, 0x70, 0x2a, 0x12, 0x48, 0x88, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd096 = { image_data_HellenicaRus8px_0xd096,
+static const qymos::gui::tImage HellenicaRus8px_0xd096 = { image_data_HellenicaRus8px_0xd096,
     10, 8, 8, 10};
 #endif
 
@@ -1820,7 +1820,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd097[5] = {
     // ∙∙∙∙∙
     0xf0, 0x85, 0xc1, 0x0b, 0xc0
 };
-static const qymui::tImage HellenicaRus8px_0xd097 = { image_data_HellenicaRus8px_0xd097,
+static const qymos::gui::tImage HellenicaRus8px_0xd097 = { image_data_HellenicaRus8px_0xd097,
     5, 8, 8, 5};
 #endif
 
@@ -1836,7 +1836,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd098[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0a, 0x34, 0xaa, 0x58, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd098 = { image_data_HellenicaRus8px_0xd098,
+static const qymos::gui::tImage HellenicaRus8px_0xd098 = { image_data_HellenicaRus8px_0xd098,
     7, 8, 8, 7};
 #endif
 
@@ -1852,7 +1852,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd099[7] = {
     // ∙∙∙∙∙∙∙
     0xb5, 0x0a, 0x34, 0xaa, 0x58, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd099 = { image_data_HellenicaRus8px_0xd099,
+static const qymos::gui::tImage HellenicaRus8px_0xd099 = { image_data_HellenicaRus8px_0xd099,
     7, 8, 8, 7};
 #endif
 
@@ -1868,7 +1868,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd09a[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x12, 0x47, 0x09, 0x11, 0x21, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd09a = { image_data_HellenicaRus8px_0xd09a,
+static const qymos::gui::tImage HellenicaRus8px_0xd09a = { image_data_HellenicaRus8px_0xd09a,
     7, 8, 8, 7};
 #endif
 
@@ -1884,7 +1884,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd09b[6] = {
     // ∙∙∙∙∙∙
     0x39, 0x24, 0x92, 0x49, 0x2c, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd09b = { image_data_HellenicaRus8px_0xd09b,
+static const qymos::gui::tImage HellenicaRus8px_0xd09b = { image_data_HellenicaRus8px_0xd09b,
     6, 8, 8, 6};
 #endif
 
@@ -1900,7 +1900,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd09c[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0b, 0x35, 0xab, 0x50, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd09c = { image_data_HellenicaRus8px_0xd09c,
+static const qymos::gui::tImage HellenicaRus8px_0xd09c = { image_data_HellenicaRus8px_0xd09c,
     7, 8, 8, 7};
 #endif
 
@@ -1916,7 +1916,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd09d[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xbe, 0x8a, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd09d = { image_data_HellenicaRus8px_0xd09d,
+static const qymos::gui::tImage HellenicaRus8px_0xd09d = { image_data_HellenicaRus8px_0xd09d,
     6, 8, 8, 6};
 #endif
 
@@ -1932,7 +1932,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd09e[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x28, 0x49, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd09e = { image_data_HellenicaRus8px_0xd09e,
+static const qymos::gui::tImage HellenicaRus8px_0xd09e = { image_data_HellenicaRus8px_0xd09e,
     7, 8, 8, 7};
 #endif
 
@@ -1948,7 +1948,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd09f[5] = {
     // ∙∙∙∙∙
     0xf4, 0xa5, 0x29, 0x4a, 0x40
 };
-static const qymui::tImage HellenicaRus8px_0xd09f = { image_data_HellenicaRus8px_0xd09f,
+static const qymos::gui::tImage HellenicaRus8px_0xd09f = { image_data_HellenicaRus8px_0xd09f,
     5, 8, 8, 5};
 #endif
 
@@ -1964,7 +1964,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a0[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x82, 0x08, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0a0 = { image_data_HellenicaRus8px_0xd0a0,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a0 = { image_data_HellenicaRus8px_0xd0a0,
     6, 8, 8, 6};
 #endif
 
@@ -1980,7 +1980,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a1[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x20, 0x82, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0a1 = { image_data_HellenicaRus8px_0xd0a1,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a1 = { image_data_HellenicaRus8px_0xd0a1,
     6, 8, 8, 6};
 #endif
 
@@ -1996,7 +1996,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a2[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x82, 0x08, 0x20, 0x82, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0a2 = { image_data_HellenicaRus8px_0xd0a2,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a2 = { image_data_HellenicaRus8px_0xd0a2,
     6, 8, 8, 6};
 #endif
 
@@ -2012,7 +2012,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a3[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0x9e, 0x08, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0a3 = { image_data_HellenicaRus8px_0xd0a3,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a3 = { image_data_HellenicaRus8px_0xd0a3,
     6, 8, 8, 6};
 #endif
 
@@ -2028,7 +2028,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a4[8] = {
     // ∙∙∙∙∙∙∙∙
     0x7c, 0x92, 0x92, 0x92, 0x7c, 0x10, 0x10, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0a4 = { image_data_HellenicaRus8px_0xd0a4,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a4 = { image_data_HellenicaRus8px_0xd0a4,
     8, 8, 8, 8};
 #endif
 
@@ -2044,7 +2044,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a5[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x25, 0x08, 0x52, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd0a5 = { image_data_HellenicaRus8px_0xd0a5,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a5 = { image_data_HellenicaRus8px_0xd0a5,
     6, 8, 8, 6};
 #endif
 
@@ -2060,7 +2060,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a6[6] = {
     // ∙∙∙∙█∙
     0x92, 0x49, 0x24, 0x92, 0x4f, 0x82
 };
-static const qymui::tImage HellenicaRus8px_0xd0a6 = { image_data_HellenicaRus8px_0xd0a6,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a6 = { image_data_HellenicaRus8px_0xd0a6,
     6, 8, 8, 6};
 #endif
 
@@ -2076,7 +2076,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a7[5] = {
     // ∙∙∙∙∙
     0x94, 0xa5, 0x27, 0x08, 0x40
 };
-static const qymui::tImage HellenicaRus8px_0xd0a7 = { image_data_HellenicaRus8px_0xd0a7,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a7 = { image_data_HellenicaRus8px_0xd0a7,
     5, 8, 8, 5};
 #endif
 
@@ -2092,7 +2092,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a8[8] = {
     // ∙∙∙∙∙∙∙∙
     0x92, 0x92, 0x92, 0x92, 0x92, 0x92, 0xfe, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0a8 = { image_data_HellenicaRus8px_0xd0a8,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a8 = { image_data_HellenicaRus8px_0xd0a8,
     8, 8, 8, 8};
 #endif
 
@@ -2108,7 +2108,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0a9[9] = {
     // ∙∙∙∙∙∙∙█∙
     0x92, 0x49, 0x24, 0x92, 0x49, 0x24, 0x93, 0xfc, 0x02
 };
-static const qymui::tImage HellenicaRus8px_0xd0a9 = { image_data_HellenicaRus8px_0xd0a9,
+static const qymos::gui::tImage HellenicaRus8px_0xd0a9 = { image_data_HellenicaRus8px_0xd0a9,
     9, 8, 8, 9};
 #endif
 
@@ -2124,7 +2124,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0aa[8] = {
     // ∙∙∙∙∙∙∙∙
     0xe0, 0x20, 0x20, 0x3c, 0x22, 0x22, 0x3c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0aa = { image_data_HellenicaRus8px_0xd0aa,
+static const qymos::gui::tImage HellenicaRus8px_0xd0aa = { image_data_HellenicaRus8px_0xd0aa,
     8, 8, 8, 8};
 #endif
 
@@ -2140,7 +2140,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0ab[8] = {
     // ∙∙∙∙∙∙∙∙
     0x82, 0x82, 0x82, 0xf2, 0x8a, 0x8a, 0xf2, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0ab = { image_data_HellenicaRus8px_0xd0ab,
+static const qymos::gui::tImage HellenicaRus8px_0xd0ab = { image_data_HellenicaRus8px_0xd0ab,
     8, 8, 8, 8};
 #endif
 
@@ -2156,7 +2156,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0ac[6] = {
     // ∙∙∙∙∙∙
     0x82, 0x08, 0x3c, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0ac = { image_data_HellenicaRus8px_0xd0ac,
+static const qymos::gui::tImage HellenicaRus8px_0xd0ac = { image_data_HellenicaRus8px_0xd0ac,
     6, 8, 8, 6};
 #endif
 
@@ -2172,7 +2172,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0ad[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x20, 0x9e, 0x0a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0ad = { image_data_HellenicaRus8px_0xd0ad,
+static const qymos::gui::tImage HellenicaRus8px_0xd0ad = { image_data_HellenicaRus8px_0xd0ad,
     6, 8, 8, 6};
 #endif
 
@@ -2188,7 +2188,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0ae[9] = {
     // ∙∙∙∙∙∙∙∙∙
     0x9e, 0x59, 0xa8, 0x5c, 0x2a, 0x15, 0x9a, 0x78, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0ae = { image_data_HellenicaRus8px_0xd0ae,
+static const qymos::gui::tImage HellenicaRus8px_0xd0ae = { image_data_HellenicaRus8px_0xd0ae,
     9, 8, 8, 9};
 #endif
 
@@ -2204,7 +2204,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0af[6] = {
     // ∙∙∙∙∙∙
     0x7a, 0x28, 0x9e, 0x28, 0xac, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd0af = { image_data_HellenicaRus8px_0xd0af,
+static const qymos::gui::tImage HellenicaRus8px_0xd0af = { image_data_HellenicaRus8px_0xd0af,
     6, 8, 8, 6};
 #endif
 
@@ -2220,7 +2220,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b0[6] = {
     // ∙∙∙∙∙∙
     0x21, 0x48, 0xa2, 0xfa, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd0b0 = { image_data_HellenicaRus8px_0xd0b0,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b0 = { image_data_HellenicaRus8px_0xd0b0,
     6, 8, 8, 6};
 #endif
 
@@ -2236,7 +2236,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b1[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0b1 = { image_data_HellenicaRus8px_0xd0b1,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b1 = { image_data_HellenicaRus8px_0xd0b1,
     6, 8, 8, 6};
 #endif
 
@@ -2252,7 +2252,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b2[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0b2 = { image_data_HellenicaRus8px_0xd0b2,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b2 = { image_data_HellenicaRus8px_0xd0b2,
     6, 8, 8, 6};
 #endif
 
@@ -2268,7 +2268,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b3[5] = {
     // ∙∙∙∙∙
     0xf4, 0x21, 0x08, 0x42, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0b3 = { image_data_HellenicaRus8px_0xd0b3,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b3 = { image_data_HellenicaRus8px_0xd0b3,
     5, 8, 8, 5};
 #endif
 
@@ -2284,7 +2284,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b4[7] = {
     // █∙∙∙∙█∙
     0x38, 0x91, 0x22, 0x44, 0x89, 0x3f, 0x42
 };
-static const qymui::tImage HellenicaRus8px_0xd0b4 = { image_data_HellenicaRus8px_0xd0b4,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b4 = { image_data_HellenicaRus8px_0xd0b4,
     7, 8, 8, 7};
 #endif
 
@@ -2300,7 +2300,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b5[6] = {
     // ∙∙∙∙∙∙
     0xfa, 0x08, 0x3c, 0x82, 0x0f, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd0b5 = { image_data_HellenicaRus8px_0xd0b5,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b5 = { image_data_HellenicaRus8px_0xd0b5,
     6, 8, 8, 6};
 #endif
 
@@ -2316,7 +2316,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b6[10] = {
     // ∙∙∙∙∙∙∙∙∙∙
     0x88, 0x92, 0x42, 0xa0, 0x70, 0x2a, 0x12, 0x48, 0x88, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0b6 = { image_data_HellenicaRus8px_0xd0b6,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b6 = { image_data_HellenicaRus8px_0xd0b6,
     10, 8, 8, 10};
 #endif
 
@@ -2332,7 +2332,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b7[5] = {
     // ∙∙∙∙∙
     0xf0, 0x85, 0xc1, 0x0b, 0xc0
 };
-static const qymui::tImage HellenicaRus8px_0xd0b7 = { image_data_HellenicaRus8px_0xd0b7,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b7 = { image_data_HellenicaRus8px_0xd0b7,
     5, 8, 8, 5};
 #endif
 
@@ -2348,7 +2348,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b8[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0a, 0x34, 0xaa, 0x58, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0b8 = { image_data_HellenicaRus8px_0xd0b8,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b8 = { image_data_HellenicaRus8px_0xd0b8,
     7, 8, 8, 7};
 #endif
 
@@ -2364,7 +2364,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0b9[7] = {
     // ∙∙∙∙∙∙∙
     0xb5, 0x0a, 0x34, 0xaa, 0x58, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0b9 = { image_data_HellenicaRus8px_0xd0b9,
+static const qymos::gui::tImage HellenicaRus8px_0xd0b9 = { image_data_HellenicaRus8px_0xd0b9,
     7, 8, 8, 7};
 #endif
 
@@ -2380,7 +2380,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0ba[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x12, 0x47, 0x09, 0x11, 0x21, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0ba = { image_data_HellenicaRus8px_0xd0ba,
+static const qymos::gui::tImage HellenicaRus8px_0xd0ba = { image_data_HellenicaRus8px_0xd0ba,
     7, 8, 8, 7};
 #endif
 
@@ -2396,7 +2396,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0bb[6] = {
     // ∙∙∙∙∙∙
     0x39, 0x24, 0x92, 0x49, 0x2c, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd0bb = { image_data_HellenicaRus8px_0xd0bb,
+static const qymos::gui::tImage HellenicaRus8px_0xd0bb = { image_data_HellenicaRus8px_0xd0bb,
     6, 8, 8, 6};
 #endif
 
@@ -2412,7 +2412,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0bc[7] = {
     // ∙∙∙∙∙∙∙
     0x85, 0x0b, 0x35, 0xab, 0x50, 0xa1, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0bc = { image_data_HellenicaRus8px_0xd0bc,
+static const qymos::gui::tImage HellenicaRus8px_0xd0bc = { image_data_HellenicaRus8px_0xd0bc,
     7, 8, 8, 7};
 #endif
 
@@ -2428,7 +2428,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0bd[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0xbe, 0x8a, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd0bd = { image_data_HellenicaRus8px_0xd0bd,
+static const qymos::gui::tImage HellenicaRus8px_0xd0bd = { image_data_HellenicaRus8px_0xd0bd,
     6, 8, 8, 6};
 #endif
 
@@ -2444,7 +2444,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0be[7] = {
     // ∙∙∙∙∙∙∙
     0x30, 0x92, 0x14, 0x28, 0x49, 0x0c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd0be = { image_data_HellenicaRus8px_0xd0be,
+static const qymos::gui::tImage HellenicaRus8px_0xd0be = { image_data_HellenicaRus8px_0xd0be,
     7, 8, 8, 7};
 #endif
 
@@ -2460,7 +2460,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd0bf[5] = {
     // ∙∙∙∙∙
     0xf4, 0xa5, 0x29, 0x4a, 0x40
 };
-static const qymui::tImage HellenicaRus8px_0xd0bf = { image_data_HellenicaRus8px_0xd0bf,
+static const qymos::gui::tImage HellenicaRus8px_0xd0bf = { image_data_HellenicaRus8px_0xd0bf,
     5, 8, 8, 5};
 #endif
 
@@ -2476,7 +2476,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd180[6] = {
     // ∙∙∙∙∙∙
     0xf2, 0x28, 0xbc, 0x82, 0x08, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd180 = { image_data_HellenicaRus8px_0xd180,
+static const qymos::gui::tImage HellenicaRus8px_0xd180 = { image_data_HellenicaRus8px_0xd180,
     6, 8, 8, 6};
 #endif
 
@@ -2492,7 +2492,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd181[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x28, 0x20, 0x82, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd181 = { image_data_HellenicaRus8px_0xd181,
+static const qymos::gui::tImage HellenicaRus8px_0xd181 = { image_data_HellenicaRus8px_0xd181,
     6, 8, 8, 6};
 #endif
 
@@ -2508,7 +2508,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd182[6] = {
     // ∙∙∙∙∙∙
     0xf8, 0x82, 0x08, 0x20, 0x82, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd182 = { image_data_HellenicaRus8px_0xd182,
+static const qymos::gui::tImage HellenicaRus8px_0xd182 = { image_data_HellenicaRus8px_0xd182,
     6, 8, 8, 6};
 #endif
 
@@ -2524,7 +2524,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd183[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x28, 0x9e, 0x08, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd183 = { image_data_HellenicaRus8px_0xd183,
+static const qymos::gui::tImage HellenicaRus8px_0xd183 = { image_data_HellenicaRus8px_0xd183,
     6, 8, 8, 6};
 #endif
 
@@ -2540,7 +2540,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd184[8] = {
     // ∙∙∙∙∙∙∙∙
     0x7c, 0x92, 0x92, 0x92, 0x7c, 0x10, 0x10, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd184 = { image_data_HellenicaRus8px_0xd184,
+static const qymos::gui::tImage HellenicaRus8px_0xd184 = { image_data_HellenicaRus8px_0xd184,
     8, 8, 8, 8};
 #endif
 
@@ -2556,7 +2556,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd185[6] = {
     // ∙∙∙∙∙∙
     0x8a, 0x25, 0x08, 0x52, 0x28, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd185 = { image_data_HellenicaRus8px_0xd185,
+static const qymos::gui::tImage HellenicaRus8px_0xd185 = { image_data_HellenicaRus8px_0xd185,
     6, 8, 8, 6};
 #endif
 
@@ -2572,7 +2572,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd186[6] = {
     // ∙∙∙∙█∙
     0x92, 0x49, 0x24, 0x92, 0x4f, 0x82
 };
-static const qymui::tImage HellenicaRus8px_0xd186 = { image_data_HellenicaRus8px_0xd186,
+static const qymos::gui::tImage HellenicaRus8px_0xd186 = { image_data_HellenicaRus8px_0xd186,
     6, 8, 8, 6};
 #endif
 
@@ -2588,7 +2588,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd187[5] = {
     // ∙∙∙∙∙
     0x94, 0xa5, 0x27, 0x08, 0x40
 };
-static const qymui::tImage HellenicaRus8px_0xd187 = { image_data_HellenicaRus8px_0xd187,
+static const qymos::gui::tImage HellenicaRus8px_0xd187 = { image_data_HellenicaRus8px_0xd187,
     5, 8, 8, 5};
 #endif
 
@@ -2604,7 +2604,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd188[8] = {
     // ∙∙∙∙∙∙∙∙
     0x92, 0x92, 0x92, 0x92, 0x92, 0x92, 0xfe, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd188 = { image_data_HellenicaRus8px_0xd188,
+static const qymos::gui::tImage HellenicaRus8px_0xd188 = { image_data_HellenicaRus8px_0xd188,
     8, 8, 8, 8};
 #endif
 
@@ -2620,7 +2620,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd189[9] = {
     // ∙∙∙∙∙∙∙█∙
     0x92, 0x49, 0x24, 0x92, 0x49, 0x24, 0x93, 0xfc, 0x02
 };
-static const qymui::tImage HellenicaRus8px_0xd189 = { image_data_HellenicaRus8px_0xd189,
+static const qymos::gui::tImage HellenicaRus8px_0xd189 = { image_data_HellenicaRus8px_0xd189,
     9, 8, 8, 9};
 #endif
 
@@ -2636,7 +2636,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd18a[8] = {
     // ∙∙∙∙∙∙∙∙
     0xe0, 0x20, 0x20, 0x3c, 0x22, 0x22, 0x3c, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd18a = { image_data_HellenicaRus8px_0xd18a,
+static const qymos::gui::tImage HellenicaRus8px_0xd18a = { image_data_HellenicaRus8px_0xd18a,
     8, 8, 8, 8};
 #endif
 
@@ -2652,7 +2652,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd18b[8] = {
     // ∙∙∙∙∙∙∙∙
     0x82, 0x82, 0x82, 0xf2, 0x8a, 0x8a, 0xf2, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd18b = { image_data_HellenicaRus8px_0xd18b,
+static const qymos::gui::tImage HellenicaRus8px_0xd18b = { image_data_HellenicaRus8px_0xd18b,
     8, 8, 8, 8};
 #endif
 
@@ -2668,7 +2668,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd18c[6] = {
     // ∙∙∙∙∙∙
     0x82, 0x08, 0x3c, 0x8a, 0x2f, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd18c = { image_data_HellenicaRus8px_0xd18c,
+static const qymos::gui::tImage HellenicaRus8px_0xd18c = { image_data_HellenicaRus8px_0xd18c,
     6, 8, 8, 6};
 #endif
 
@@ -2684,7 +2684,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd18d[6] = {
     // ∙∙∙∙∙∙
     0x72, 0x20, 0x9e, 0x0a, 0x27, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd18d = { image_data_HellenicaRus8px_0xd18d,
+static const qymos::gui::tImage HellenicaRus8px_0xd18d = { image_data_HellenicaRus8px_0xd18d,
     6, 8, 8, 6};
 #endif
 
@@ -2700,7 +2700,7 @@ static const uint8_t image_data_HellenicaRus8px_0xd18e[9] = {
     // ∙∙∙∙∙∙∙∙∙
     0x9e, 0x59, 0xa8, 0x5c, 0x2a, 0x15, 0x9a, 0x78, 0x00
 };
-static const qymui::tImage HellenicaRus8px_0xd18e = { image_data_HellenicaRus8px_0xd18e,
+static const qymos::gui::tImage HellenicaRus8px_0xd18e = { image_data_HellenicaRus8px_0xd18e,
     9, 8, 8, 9};
 #endif
 
@@ -2716,12 +2716,12 @@ static const uint8_t image_data_HellenicaRus8px_0xd18f[6] = {
     // ∙∙∙∙∙∙
     0x7a, 0x28, 0x9e, 0x28, 0xac, 0x80
 };
-static const qymui::tImage HellenicaRus8px_0xd18f = { image_data_HellenicaRus8px_0xd18f,
+static const qymos::gui::tImage HellenicaRus8px_0xd18f = { image_data_HellenicaRus8px_0xd18f,
     6, 8, 8, 6};
 #endif
 
 
-static const qymui::tChar HellenicaRus8px_array[] = {
+static const qymos::gui::tChar HellenicaRus8px_array[] = {
 
 #if (0x0 == 0x0)
   // character: ' '
@@ -4062,4 +4062,4 @@ static const qymui::tChar HellenicaRus8px_array[] = {
 };
 
 
-const qymui::tFont HellenicaRus8px = { 167, HellenicaRus8px_array };
+const qymos::gui::tFont HellenicaRus8px = { 167, HellenicaRus8px_array };
