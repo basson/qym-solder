@@ -17,6 +17,9 @@
 #include "screens/main.hpp"
 #include "screens/config.hpp"
 #include "screens/config/default.hpp"
+#include "screens/config/hakko_t12.hpp"
+#include "screens/config/solder_hand.hpp"
+#include "screens/config/hair_gun.hpp"
 
 qymos::driver::Ssd1309 graphicalDriver;
 
@@ -30,6 +33,9 @@ qymos::gui::Hierarchy *hierarchy = qymos::gui::Hierarchy::GetInstance();
 gui::ScreenMain screenMain;
 gui::ScreenConfig screenConfig;
 gui::ScreenConfigDefault screenConfigDefault;
+gui::ScreenConfigHakkoT12 screenConfigHakkoT12;
+gui::ScreenConfigSolderHand screenConfigSolderHand;
+gui::ScreenConfigHairGun screenConfigHairGun;
 
 volatile bool btnEncoderIrq = false;
 volatile uint32_t btnEncoderPushedMs = 0;
@@ -44,6 +50,9 @@ void CreateHierarchy()
     hierarchy->AddItem(SCREEN_MAIN, SCREEN_MAIN, &screenMain);
     hierarchy->AddItem(SCREEN_CONFIG, SCREEN_MAIN, &screenConfig);
     hierarchy->AddItem(SCREEN_CONFIG_DEFAULT, SCREEN_CONFIG, &screenConfigDefault);
+    hierarchy->AddItem(SCREEN_CONFIG_HAKKO_T12, SCREEN_CONFIG, &screenConfigHakkoT12);
+    hierarchy->AddItem(SCREEN_CONFIG_SOLDER_HAND, SCREEN_CONFIG, &screenConfigSolderHand);
+    hierarchy->AddItem(SCREEN_CONFIG_HAIR_GUN, SCREEN_CONFIG, &screenConfigHairGun);
 }
 
 void Initialize()
@@ -100,6 +109,7 @@ void Main()
 		hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnEncoderValue(lastEncoderValue);
 	}
 
+    
     hierarchy->GetItem(hierarchy->GetSelectedItemId())->Process();
     hierarchy->GetItem(hierarchy->GetSelectedItemId())->GetPage()->Render(&displayBuffer);
     graphicalDriver.SendFrame(&displayBuffer, 0, 0);

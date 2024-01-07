@@ -1,8 +1,8 @@
-#include "screens/main/haccko_t12.hpp"
+#include "screens/main/hakko_t12.hpp"
 
 namespace gui
 {
-    ScreenHacckoT12::ScreenHacckoT12()
+    ScreenHakkoT12::ScreenHakkoT12()
     {
         _textCurrent.SetFont(&HellenicaRus16px);
         _textCurrent.SetText(_strCurrent);
@@ -22,25 +22,25 @@ namespace gui
         _tabPage.SetElement(&_iconHeat);
     }
 
-    qymos::gui::TabPage *ScreenHacckoT12::GetPage()
+    qymos::gui::TabPage *ScreenHakkoT12::GetPage()
     {
         return &_tabPage;
     }
 
-    void ScreenHacckoT12::OnEncoderDirection(bool direction)
+    void ScreenHakkoT12::OnEncoderDirection(bool direction)
     {
     }
-    void ScreenHacckoT12::OnEncoderValue(uint32_t value)
+    void ScreenHakkoT12::OnEncoderValue(uint32_t value)
     {
     }
 
-    void ScreenHacckoT12::Process()
+    void ScreenHakkoT12::Process()
     {
     }
-    void ScreenHacckoT12::OnButtonClick()
+    void ScreenHakkoT12::OnButtonClick()
     {
     }
-    void ScreenHacckoT12::OnButtonLongClick()
+    void ScreenHakkoT12::OnButtonLongClick()
     {
     }
 } // namespace gui

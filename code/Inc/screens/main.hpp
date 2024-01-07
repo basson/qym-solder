@@ -14,8 +14,8 @@
 #include "uie/include/tab_layout.hpp"
 #include "uie/include/tab_page.hpp"
 
-#include "screens/main/haccko_t12.hpp"
-#include "screens/main/soldering_iron.hpp"
+#include "screens/main/hakko_t12.hpp"
+#include "screens/main/solder_hand.hpp"
 #include "screens/main/hair_gun.hpp"
 
 namespace gui
@@ -35,8 +35,8 @@ namespace gui
 
         int8_t _activeTab = 0;
         
-        ScreenHacckoT12 _screenHacckoT12;
-        ScreenSolderingIron _screenIron;
+        ScreenHakkoT12 _screenHakkoT12;
+        ScreenSolderHand _screenIron;
         ScreenHAirGun _screenHair;
 
     public:

@@ -18,7 +18,7 @@
 
 namespace gui
 {
-    class ScreenSolderingIron
+    class ScreenSolderHand
     {
     private:
         char _strCurrent[10] = "300°";
@@ -31,7 +31,7 @@ namespace gui
         qymos::gui::TabPage _tabPage;
 
     public:
-        ScreenSolderingIron();
+        ScreenSolderHand();
 
         qymos::gui::TabPage *GetPage();
 

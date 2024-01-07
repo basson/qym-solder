@@ -31,24 +31,24 @@ namespace gui
         char *_titleStr = "Настройки";
         char *_strBack = "Назад";
         char *_strDefault = "Основные";
-        char *_strHacckT12 = "Haccko t12";
-        char *_strSolderIron = "Solder hand";
+        char *_strHacckoT12 = "Hakko t12";
+        char *_strSolderHand = "Solder hand";
         char *_strHiarGun = "Hotair gun";
         
 
         qymos::gui::Text _titleText;
         qymos::gui::Text _textBack;
         qymos::gui::Text _textDefault;
-        qymos::gui::Text _textHacckoT12;
-        qymos::gui::Text _textSolderIron;
+        qymos::gui::Text _textHakkoT12;
+        qymos::gui::Text _textSolderHand;
         qymos::gui::Text _textHairGun;
 
         qymos::gui::Bitmap _iconConfig;
         qymos::gui::Bitmap _iconBack;
         qymos::gui::Bitmap _iconDefault;
-        qymos::gui::Bitmap _iconHacckoT12;
+        qymos::gui::Bitmap _iconHakkoT12;
         qymos::gui::Bitmap _iconHiarGun;
-        qymos::gui::Bitmap _iconSolderIron;
+        qymos::gui::Bitmap _iconSolderHand;
 
         qymos::gui::Window _window;
 

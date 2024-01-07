@@ -18,7 +18,7 @@
 
 namespace gui
 {
-    class ScreenHacckoT12
+    class ScreenHakkoT12
     {
     private:
         char _strCurrent[10] = "120°";
@@ -31,7 +31,7 @@ namespace gui
         qymos::gui::TabPage _tabPage;
 
     public:
-        ScreenHacckoT12();
+        ScreenHakkoT12();
 
         qymos::gui::TabPage *GetPage();
 

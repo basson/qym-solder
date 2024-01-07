@@ -13,11 +13,11 @@ namespace gui
         _textDefault.SetFont(&HellenicaRus8px);
         _textDefault.SetText(_strDefault);
 
-        _textHacckoT12.SetFont(&HellenicaRus8px);
-        _textHacckoT12.SetText(_strHacckT12);
+        _textHakkoT12.SetFont(&HellenicaRus8px);
+        _textHakkoT12.SetText(_strHacckoT12);
 
-        _textSolderIron.SetFont(&HellenicaRus8px);
-        _textSolderIron.SetText(_strSolderIron);
+        _textSolderHand.SetFont(&HellenicaRus8px);
+        _textSolderHand.SetText(_strSolderHand);
 
         _textHairGun.SetFont(&HellenicaRus8px);
         _textHairGun.SetText(_strHiarGun);
@@ -25,16 +25,16 @@ namespace gui
         _iconConfig.SetImage(&IconConfig8px);
         _iconBack.SetImage(&IconBack8px);
         _iconDefault.SetImage(&IconMonitor8px);
-        _iconHacckoT12.SetImage(&IconT128px);
-        _iconSolderIron.SetImage(&IconD8928px);
+        _iconHakkoT12.SetImage(&IconT128px);
+        _iconSolderHand.SetImage(&IconD8928px);
         _iconHiarGun.SetImage(&IconFan8px);
 
         _list.SetPosition({2, 13, 124, 49});
         _list.SetItemHeight(12);
         _list.AddItem(&_textBack, &_iconBack);
         _list.AddItem(&_textDefault, &_iconDefault);
-        _list.AddItem(&_textHacckoT12, &_iconHacckoT12);
-        _list.AddItem(&_textSolderIron, &_iconSolderIron);
+        _list.AddItem(&_textHakkoT12, &_iconHakkoT12);
+        _list.AddItem(&_textSolderHand, &_iconSolderHand);
         _list.AddItem(&_textHairGun, &_iconHiarGun);
 
         _layout.SetPosition({2, 13, 124, 49});
@@ -78,10 +78,10 @@ namespace gui
             _hierarchy->SetSelectedItem(SCREEN_CONFIG_DEFAULT);
             break;
         case 2:
-            _hierarchy->SetSelectedItem(SCREEN_CONFIG_HACCKO_T12);
+            _hierarchy->SetSelectedItem(SCREEN_CONFIG_HAKKO_T12);
             break;
         case 3:
-            _hierarchy->SetSelectedItem(SCREEN_CONFIG_SOLDER_IRON);
+            _hierarchy->SetSelectedItem(SCREEN_CONFIG_SOLDER_HAND);
             break;
         case 4:
             _hierarchy->SetSelectedItem(SCREEN_CONFIG_HAIR_GUN);

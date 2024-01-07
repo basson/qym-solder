@@ -1,8 +1,8 @@
-#include "screens/main/soldering_iron.hpp"
+#include "screens/main/solder_hand.hpp"
 
 namespace gui
 {
-    ScreenSolderingIron::ScreenSolderingIron()
+    ScreenSolderHand::ScreenSolderHand()
     {
         _textCurrent.SetFont(&HellenicaRus16px);
         _textCurrent.SetText(_strCurrent);
@@ -22,25 +22,25 @@ namespace gui
         _tabPage.SetElement(&_iconHeat);
     }
 
-    qymos::gui::TabPage *ScreenSolderingIron::GetPage()
+    qymos::gui::TabPage *ScreenSolderHand::GetPage()
     {
         return &_tabPage;
     }
 
-    void ScreenSolderingIron::OnEncoderDirection(bool direction)
+    void ScreenSolderHand::OnEncoderDirection(bool direction)
     {
     }
-    void ScreenSolderingIron::OnEncoderValue(uint32_t value)
+    void ScreenSolderHand::OnEncoderValue(uint32_t value)
     {
     }
 
-    void ScreenSolderingIron::Process()
+    void ScreenSolderHand::Process()
     {
     }
-    void ScreenSolderingIron::OnButtonClick()
+    void ScreenSolderHand::OnButtonClick()
     {
     }
-    void ScreenSolderingIron::OnButtonLongClick()
+    void ScreenSolderHand::OnButtonLongClick()
     {
     }
 } // namespace gui

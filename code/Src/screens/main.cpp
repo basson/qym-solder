@@ -16,7 +16,7 @@ namespace gui
         _tabLayout.SetPosition({0, 0, 128, 64});
         _tabLayout.SetTabBarHeight(12);
         _tabLayout.SetActiveTab(0);
-        _tabLayout.AddTab(&_textT12, _screenHacckoT12.GetPage());
+        _tabLayout.AddTab(&_textT12, _screenHakkoT12.GetPage());
         _tabLayout.AddTab(&_textIron, _screenIron.GetPage());
         _tabLayout.AddTab(&_textHair, _screenHair.GetPage());
     }
@@ -28,7 +28,7 @@ namespace gui
 
     void ScreenMain::Process()
     {
-        _screenHacckoT12.Process();
+        _screenHakkoT12.Process();
         _screenIron.Process();
         _screenHair.Process();
     }
@@ -37,7 +37,7 @@ namespace gui
         switch (_tabLayout.GetActiveTab())
         {
         case 0:
-            _screenHacckoT12.OnButtonClick();
+            _screenHakkoT12.OnButtonClick();
             break;
         case 1:
             _screenIron.OnButtonClick();
@@ -54,7 +54,7 @@ namespace gui
         switch (_tabLayout.GetActiveTab())
         {
         case 0:
-            _screenHacckoT12.OnButtonLongClick();
+            _screenHakkoT12.OnButtonLongClick();
             break;
         case 1:
             _screenIron.OnButtonLongClick();
