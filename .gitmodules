@@ -7,3 +7,6 @@
 [submodule "code/lib/qymos-stm32-gui-monochrome"]
 	path = code/lib/qymos-stm32-gui-monochrome
 	url = https://github.com/basson/qymos-stm32-gui-monochrome.git
+[submodule "code/lib/qymos-stm32-common"]
+	path = code/lib/qymos-stm32-common
+	url = https://github.com/basson/qymos-stm32-common.git

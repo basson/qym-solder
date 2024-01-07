@@ -19,7 +19,7 @@ private:
 
         uint8_t t12MinTemp = 50;
         uint16_t t12MaxTemp = 360;
-        uint16_t t12CurrentTemp = 0;
+        uint16_t t12SetTemp = 0;
         int8_t t12Calibration = 0;
         float t12Kp = 800;
         float t12Ki = 1;
@@ -30,7 +30,7 @@ private:
 
         uint8_t fanMinTemp = 50;
         uint16_t fanMaxTemp = 360;
-        uint16_t fanCurrentTemp = 0;
+        uint16_t fanSetTemp = 0;
         int8_t fanCalibration = 0;
         float fanKp = 0.8;
         float fanKi =  0.0003;
@@ -38,14 +38,14 @@ private:
         
         uint8_t fanMinFlow = 10;
         uint16_t fanMaxFlow = 100;
-        uint16_t fanCurrentFlow = 100;
+        uint16_t fanSetFlow = 100;
         bool fanSensor = false;
         uint8_t fanTimeSleep[3] = {0, 5, 0};
         uint16_t fanTempSleep = 100;
 
         uint8_t ironMinTemp = 50;
         uint16_t ironMaxTemp = 360;
-        uint16_t ironCurrentTemp = 0;
+        uint16_t ironSetTemp = 0;
         int8_t ironCalibration = 0;
         float ironKp = 800;
         float ironKi = 1;

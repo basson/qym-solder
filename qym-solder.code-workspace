@@ -7,5 +7,10 @@
 			"path": "docs"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"limits": "cpp",
+			"type_traits": "cpp"
+		}
+	}
 }
