@@ -84,23 +84,15 @@ namespace gui
     }
     void ScreenConfigHakkoT12::OnEncoderDirection(bool direction)
     {
-        if (!direction)
-            _activeItem++;
-        else
-            _activeItem--;
-        if (_activeItem > _list.GetSize())
-            _activeItem = 0;
-        if (_activeItem < 0)
-            _activeItem = _list.GetSize();
 
-        _list.SetActiveItem(_activeItem);
+        _list.ChangeActiveByDirection(direction);
     }
     void ScreenConfigHakkoT12::OnEncoderValue(uint32_t value)
     {
     }
     void ScreenConfigHakkoT12::OnButtonClick(uint16_t ButtonPin)
     {
-        switch (_activeItem)
+        switch (_list.GetActiveItem())
         {
         case 0:
             _hierarhy->SetSelectedItem(SCREEN_CONFIG);

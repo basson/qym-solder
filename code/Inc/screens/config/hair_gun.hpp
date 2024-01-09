@@ -70,8 +70,6 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarhy = qymos::gui::Hierarchy::GetInstance();
 
-        int8_t _activeItem = 0;
-
     public:
         ScreenConfigHairGun();
         qymos::gui::IElement *GetPage();

@@ -19,6 +19,8 @@
 #include "uie/include/layout.hpp"
 #include "uie/include/list.hpp"
 #include "uie/include/input_time.hpp"
+#include "uie/include/input_select.hpp"
+#include "uie/include/input_dialog.hpp"
 
 namespace gui
 {
@@ -36,6 +38,18 @@ namespace gui
         char *_strNtc = "NTC термистр";
         char *_strResetCfg = "Сбросить настройки";
 
+
+        char *_strSelectCoolingNtc = "Ntc";
+        char *_strSelectCoolingAlways = "Постоянно";
+
+        char *_strSelectNtcNone = "Нет";
+        char *_strSelectNtc10K = "10К";
+        char *_strSelectNtc100k = "100K";
+
+        char *_strResetCfgInputMessage = "Вы уверены?";
+        char *_strResetCfgInputOk = "Да";
+        char *_strResetCfgInputCancel = "Нет";
+
         qymos::gui::Text _titleText;
         qymos::gui::Text _textBack;
         qymos::gui::Text _textTimeOff;
@@ -45,12 +59,26 @@ namespace gui
         qymos::gui::Text _textNtc;
         qymos::gui::Text _textResetCfg;
 
+        qymos::gui::Text _textSelectCoolingNtc;
+        qymos::gui::Text _textSelectCoolingAlways;
+
+        qymos::gui::Text _textSelectNtcNone;
+        qymos::gui::Text _textSelectNtc10k;
+        qymos::gui::Text _textSelectNtc100k;
+
+        qymos::gui::Text _textResetCfgInputMessage;
+        qymos::gui::Text _textResetCfgInputOk;
+        qymos::gui::Text _textResetCfgInputCancel;
+
         qymos::gui::Bitmap _iconConfig;
         qymos::gui::Bitmap _iconBack;
         qymos::gui::Bitmap _iconClock;
         qymos::gui::Bitmap _iconSound;
 
         qymos::gui::InputTime _inputTime;
+        qymos::gui::InputSelect _inputSelectCooling;
+        qymos::gui::InputSelect _inputSelectNtc;
+        qymos::gui::InputDialog _inputResetCfgConfirm;
 
         qymos::gui::Window _window;
 
@@ -59,11 +87,11 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarchy = qymos::gui::Hierarchy::GetInstance();
 
-        int8_t _activeItem = 0;
-
         bool _isInputShow[5] = {
             false,
         };
+
+        bool _soundState = false;
 
     public:
         ScreenConfigDefault();

@@ -54,22 +54,14 @@ namespace gui
     }
     void ScreenConfig::OnEncoderDirection(bool direction)
     {
-        if (!direction)
-            _activeItem++;
-        else
-            _activeItem--;
-        if (_activeItem > _list.GetSize())
-            _activeItem = 0;
-        if (_activeItem < 0)
-            _activeItem = _list.GetSize();
-        _list.SetActiveItem(_activeItem);
+        _list.ChangeActiveByDirection(direction);
     }
     void ScreenConfig::OnEncoderValue(uint32_t value)
     {
     }
     void ScreenConfig::OnButtonClick(uint16_t ButtonPin)
     {
-        switch (_activeItem)
+        switch (_list.GetActiveItem())
         {
         case 0:
             _hierarchy->SetSelectedItem(SCREEN_MAIN);

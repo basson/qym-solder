@@ -70,8 +70,6 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarhy = qymos::gui::Hierarchy::GetInstance();
 
-        int8_t _activeItem = 0;
-
     public:
         ScreenConfigHakkoT12();
         qymos::gui::IElement *GetPage();

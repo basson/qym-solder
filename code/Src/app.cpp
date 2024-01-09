@@ -32,9 +32,7 @@ Emem *emem = Emem::GetInstance();
 qymos::driver::M24cxx m24cxx;
 qymos::driver::Ssd1309 graphicalDriver;
 
-uint8_t buffer[1024] = {
-    0x00,
-};
+uint8_t buffer[1024] = {0x00};
 qymos::gui::DisplayBuffer displayBuffer;
 
 qymos::gui::Hierarchy *hierarchy = qymos::gui::Hierarchy::GetInstance();
@@ -76,6 +74,8 @@ void Initialize()
 
     HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adcValue, 7); // стартуем АЦП
 
+    __HAL_TIM_SET_COUNTER(&htim1, lastEncoderValue);
+
     m24cxx.SetPort(&hi2c2);
     m24cxx.SetAddress(0xA0);
 
@@ -91,10 +91,11 @@ void Initialize()
     graphicalDriver.SetAddress(0x78);
     graphicalDriver.SetPort(&hi2c2);
     graphicalDriver.SetResetPin(DSP_RST_GPIO_Port, DSP_RST_Pin);
-
+    graphicalDriver.Initialize();
     CreateHierarchy();
 
-    hierarchy->SetSelectedItem(SCREEN_MAIN);
+    // hierarchy->SetSelectedItem(SCREEN_MAIN);
+    hierarchy->SetSelectedItem(SCREEN_CONFIG_DEFAULT);
 }
 
 void Main()
@@ -121,6 +122,7 @@ void Main()
     {
         if (HAL_GPIO_ReadPin(ENC_SW_GPIO_Port, ENC_SW_Pin))
         {
+
             if (HAL_GetTick() - btnEncoderPushedMs <= 500)
                 hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonClick(ENC_SW_Pin);
             else
@@ -153,6 +155,7 @@ void Main()
 
     hierarchy->GetItem(hierarchy->GetSelectedItemId())->Process();
     hierarchy->GetItem(hierarchy->GetSelectedItemId())->GetPage()->Render(&displayBuffer);
+
     graphicalDriver.SendFrame(&displayBuffer, 0, 0);
 }
 

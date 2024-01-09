@@ -16,6 +16,8 @@
 
 #include "uie/include/tab_page.hpp"
 
+#include "control.hpp"
+
 namespace gui
 {
     class ScreenHakkoT12

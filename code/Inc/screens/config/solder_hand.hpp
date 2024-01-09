@@ -70,8 +70,6 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarhy = qymos::gui::Hierarchy::GetInstance();
 
-        int8_t _activeItem = 0;
-
     public:
         ScreenConfigSolderHand();
         qymos::gui::IElement *GetPage();

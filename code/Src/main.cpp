@@ -72,6 +72,8 @@ int main(void)
   MX_TIM2_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_1);
+  
   Initialize();
   /* USER CODE END 2 */
 

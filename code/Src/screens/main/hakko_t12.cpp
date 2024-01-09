@@ -36,6 +36,16 @@ namespace gui
 
     void ScreenHakkoT12::Process()
     {
+        uint16_t temp = Control::GetCurrentTempHakkoT12();
+        itoa(temp, _strCurrent, 10);
+        strcat(_strCurrent, "°");
+        if (temp < 100)
+        {
+            char buf[6] = "0";
+            strcat(buf, _strCurrent);
+            strcpy(_strCurrent, buf);
+        }
+        _textCurrent.SetText(_strCurrent);
     }
     void ScreenHakkoT12::OnButtonClick()
     {
