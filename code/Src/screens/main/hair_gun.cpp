@@ -27,15 +27,15 @@ namespace gui
         _iconHeat.SetImage(&IconHeat12px);
         _iconHeat.SetPosition({20, 18, 0, 0});
 
-        _iconFan.SetImage(&IconFan12px);
-        _iconFan.SetPosition({20, 36, 0, 0});
+        _iconFlow.SetImage(&IconFan12px);
+        _iconFlow.SetPosition({20, 36, 0, 0});
 
         _tabPage.SetElement(&_textFlowCurrent);
         _tabPage.SetElement(&_textTempCurrent);
         _tabPage.SetElement(&_textTempSet);
         _tabPage.SetElement(&_textFlowSet);
         _tabPage.SetElement(&_iconHeat);
-        _tabPage.SetElement(&_iconFan);
+        _tabPage.SetElement(&_iconFlow);
     }
     qymos::gui::TabPage *ScreenHAirGun::GetPage()
     {

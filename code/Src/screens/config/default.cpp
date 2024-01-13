@@ -56,6 +56,14 @@ namespace gui
         _iconBack.SetImage(&IconBack8px);
         _iconClock.SetImage(&IconClock8px);
         _iconSound.SetImage(&IconSound8px);
+        _iconNtc.SetImage(&IconNtc8px);
+        _iconCooling.SetImage(&IconCooling8px);
+        _iconReset.SetImage(&IconReset8px);
+
+        _checkBoxSelected.SetPosition({0, 0, 8, 8});
+        _checkBoxSelected.SetCheck(true);
+        _checkBoxNotSelected.SetPosition({0, 0, 8, 8});
+        _checkBoxNotSelected.SetCheck(false);
 
         _inputTime.SetFont(&HellenicaRus8px);
         _inputTime.SetPosition({20, 16, 88, 64 - 32});
@@ -63,14 +71,14 @@ namespace gui
 
         _inputSelectCooling.SetPosition({20, 16, 128 - 40, 28});
         _inputSelectCooling.SetItemHeight(12);
-        _inputSelectCooling.AddItem(&_textSelectCoolingNtc, &_iconSound);
-        _inputSelectCooling.AddItem(&_textSelectCoolingAlways, &_iconSound);
+        _inputSelectCooling.AddItem(&_textSelectCoolingNtc, &_checkBoxSelected);
+        _inputSelectCooling.AddItem(&_textSelectCoolingAlways, &_checkBoxNotSelected);
         _inputSelectCooling.Visible(false);
 
         _inputSelectNtc.SetPosition({30, 16, 128 - 60, 28});
-        _inputSelectNtc.AddItem(&_textSelectNtcNone, &_iconConfig);
-        _inputSelectNtc.AddItem(&_textSelectNtc10k, &_iconConfig);
-        _inputSelectNtc.AddItem(&_textSelectNtc100k, &_iconConfig);
+        _inputSelectNtc.AddItem(&_textSelectNtcNone, &_checkBoxNotSelected);
+        _inputSelectNtc.AddItem(&_textSelectNtc10k, &_checkBoxSelected);
+        _inputSelectNtc.AddItem(&_textSelectNtc100k, & _checkBoxNotSelected);
         _inputSelectNtc.SetItemHeight(12);
         _inputSelectNtc.Visible(false);
 
@@ -86,9 +94,9 @@ namespace gui
         _list.AddItem(&_textTimeOff, &_iconClock);
         _list.AddItem(&_textTimeShutdown, &_iconClock);
         _list.AddItem(&_textSound, &_iconSound);
-        _list.AddItem(&_textCooling, &_iconBack);
-        _list.AddItem(&_textNtc, &_iconBack);
-        _list.AddItem(&_textResetCfg, &_iconBack);
+        _list.AddItem(&_textCooling, &_iconCooling);
+        _list.AddItem(&_textNtc, &_iconNtc);
+        _list.AddItem(&_textResetCfg, &_iconReset);
 
         _layout.SetPosition({2, 13, 124, 49});
         _layout.SetElement(&_list);

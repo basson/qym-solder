@@ -33,7 +33,7 @@ namespace gui
         qymos::gui::Text _textFlowSet;
 
         qymos::gui::Bitmap _iconHeat;
-        qymos::gui::Bitmap _iconFan;
+        qymos::gui::Bitmap _iconFlow;
 
         qymos::gui::TabPage _tabPage;
 

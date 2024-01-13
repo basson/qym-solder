@@ -6,8 +6,10 @@
 #include "icons/IconBack8px.h"
 #include "icons/IconCalibration8px.h"
 #include "icons/IconSens8px.h"
-#include "icons/IconFlow8px.h"
+#include "icons/IconCooling8px.h"
 #include "icons/IconTemp8px.h"
+#include "icons/IconNtc8px.h"
+#include "icons/IconPid8px.h"
 
 #include "types.hpp"
 #include "iscreen.hpp"
@@ -15,10 +17,14 @@
 
 #include "screens.hpp"
 
+#include "pid_autotune.hpp"
+
 #include "uip/include/text.hpp"
 
-#include "uie/include/input_time.hpp"
+#include "uie/include/checkbox.hpp"
+
 #include "uie/include/input_int.hpp"
+#include "uie/include/input_select.hpp"
 
 #include "uie/include/window.hpp"
 #include "uie/include/layout.hpp"
@@ -42,6 +48,10 @@ namespace gui
         char *_strPidTune = "Калибровка PID";
         char *_strNtcResistens = "NTC термистр";
 
+        char *_strSelectNtcNone = "Нет";
+        char *_strSelectNtc10K = "10К";
+        char *_strSelectNtc100k = "100K";
+
         qymos::gui::Text _titleText;
         qymos::gui::Text _textBack;
         qymos::gui::Text _textTempCalibrate;
@@ -53,15 +63,24 @@ namespace gui
         qymos::gui::Text _textPidTune;
         qymos::gui::Text _textNtsResistens;
 
+        qymos::gui::Text _textSelectNtcNone;
+        qymos::gui::Text _textSelectNtc10k;
+        qymos::gui::Text _textSelectNtc100k;
+
         qymos::gui::Bitmap _iconHairGun;
         qymos::gui::Bitmap _iconCalibrate;
         qymos::gui::Bitmap _iconBack;
         qymos::gui::Bitmap _iconSens;
         qymos::gui::Bitmap _iconFlow;
         qymos::gui::Bitmap _iconTemp;
+        qymos::gui::Bitmap _iconNtc;
+        qymos::gui::Bitmap _iconPid;
 
-        qymos::gui::InputTime _inputTime;
+        qymos::gui::CheckBox _checkBoxSelected;
+        qymos::gui::CheckBox _checkBoxNotSelected;
+
         qymos::gui::InputInt _inputInt;
+        qymos::gui::InputSelect _inputSelectNtc;
 
         qymos::gui::Window _window;
 
@@ -69,6 +88,12 @@ namespace gui
         qymos::gui::List _list;
 
         qymos::gui::Hierarchy *_hierarhy = qymos::gui::Hierarchy::GetInstance();
+
+        bool _isInputShow[6]{
+            false,
+        };
+
+        bool _sensorState = false;
 
     public:
         ScreenConfigHairGun();

@@ -23,6 +23,7 @@
 #include "screens/config/hakko_t12.hpp"
 #include "screens/config/solder_hand.hpp"
 #include "screens/config/hair_gun.hpp"
+#include "screens/config/pid_autotune.hpp"
 
 #include "control.hpp"
 
@@ -43,6 +44,7 @@ gui::ScreenConfigDefault screenConfigDefault;
 gui::ScreenConfigHakkoT12 screenConfigHakkoT12;
 gui::ScreenConfigSolderHand screenConfigSolderHand;
 gui::ScreenConfigHairGun screenConfigHairGun;
+gui::ScreenPidAutoTune screenConfigPidAutotune;
 
 Control control;
 
@@ -65,6 +67,7 @@ void CreateHierarchy()
     hierarchy->AddItem(SCREEN_CONFIG_HAKKO_T12, SCREEN_CONFIG, &screenConfigHakkoT12);
     hierarchy->AddItem(SCREEN_CONFIG_SOLDER_HAND, SCREEN_CONFIG, &screenConfigSolderHand);
     hierarchy->AddItem(SCREEN_CONFIG_HAIR_GUN, SCREEN_CONFIG, &screenConfigHairGun);
+    hierarchy->AddItem(SCREEN_CONFIG_PID_AUTOTUNE, SCREEN_CONFIG, &screenConfigPidAutotune);
 }
 
 void Initialize()
@@ -95,7 +98,7 @@ void Initialize()
     CreateHierarchy();
 
     // hierarchy->SetSelectedItem(SCREEN_MAIN);
-    hierarchy->SetSelectedItem(SCREEN_CONFIG_DEFAULT);
+    hierarchy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
 }
 
 void Main()

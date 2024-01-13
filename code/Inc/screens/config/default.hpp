@@ -6,6 +6,9 @@
 #include "icons/IconBack8px.h"
 #include "icons/IconClock8px.h"
 #include "icons/IconSound8px.h"
+#include "icons/IconNtc8px.h"
+#include "icons/IconCooling8px.h"
+#include "icons/IconReset8px.h"
 
 #include "types.hpp"
 #include "iscreen.hpp"
@@ -21,6 +24,7 @@
 #include "uie/include/input_time.hpp"
 #include "uie/include/input_select.hpp"
 #include "uie/include/input_dialog.hpp"
+#include "uie/include/checkbox.hpp"
 
 namespace gui
 {
@@ -74,6 +78,13 @@ namespace gui
         qymos::gui::Bitmap _iconBack;
         qymos::gui::Bitmap _iconClock;
         qymos::gui::Bitmap _iconSound;
+        qymos::gui::Bitmap _iconNtc;
+        qymos::gui::Bitmap _iconCooling;
+        qymos::gui::Bitmap _iconReset;
+
+
+        qymos::gui::CheckBox _checkBoxSelected;
+        qymos::gui::CheckBox _checkBoxNotSelected;
 
         qymos::gui::InputTime _inputTime;
         qymos::gui::InputSelect _inputSelectCooling;
