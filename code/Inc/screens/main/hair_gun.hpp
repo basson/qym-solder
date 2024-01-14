@@ -8,6 +8,7 @@
 #include "fonts/HellenicaRus8px.h"
 
 #include "icons/IconFan12px.h"
+#include "icons/IconFlow12px.h"
 #include "icons/IconHeat12px.h"
 
 #include "types.hpp"

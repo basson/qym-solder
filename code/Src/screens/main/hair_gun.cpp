@@ -27,7 +27,7 @@ namespace gui
         _iconHeat.SetImage(&IconHeat12px);
         _iconHeat.SetPosition({20, 18, 0, 0});
 
-        _iconFlow.SetImage(&IconFan12px);
+        _iconFlow.SetImage(&IconFlow12px);
         _iconFlow.SetPosition({20, 36, 0, 0});
 
         _tabPage.SetElement(&_textFlowCurrent);

@@ -97,8 +97,8 @@ void Initialize()
     graphicalDriver.Initialize();
     CreateHierarchy();
 
-    // hierarchy->SetSelectedItem(SCREEN_MAIN);
-    hierarchy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
+    hierarchy->SetSelectedItem(SCREEN_MAIN);
+    // hierarchy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
 }
 
 void Main()
