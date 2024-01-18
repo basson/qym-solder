@@ -16,6 +16,8 @@ private:
         uint8_t defaultTimeOff[3] = {0, 0, 0};
         uint8_t defaultTimeShutdown[3] = {0, 0, 0};
         bool defaultSound = true;
+        uint8_t defualtCooling = 0; // 0 - always | 1 - ntc regulation
+        uint8_t defaultNtc = 0; // 0 - none | 1 - 10K | 2 - 100K
 
         uint8_t t12MinTemp = 50;
         uint16_t t12MaxTemp = 360;
@@ -76,9 +78,9 @@ public:
         _m24cxx = m24cxx;
         uint8_t first = 0;
         _m24cxx->ReadData(_firstAddr, &first, sizeof(first), 500);
-        if (first != 0x20)
+        if (first != 0x21)
         {
-            first = 0x20;
+            first = 0x21;
             _m24cxx->WriteData(_firstAddr, &first, sizeof(first), 500);
             _m24cxx->WriteData(_structAddr, (uint8_t *)&_memory, _memorySize, 500);
             return;
@@ -91,5 +93,6 @@ public:
     {
         MemStruct def;
         _m24cxx->WriteData(_structAddr, (uint8_t *)&def, _memorySize, 500);
+        _memory = def;
     };
 };

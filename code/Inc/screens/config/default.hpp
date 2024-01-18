@@ -9,6 +9,10 @@
 #include "icons/IconNtc8px.h"
 #include "icons/IconCooling8px.h"
 #include "icons/IconReset8px.h"
+#include "icons/IconRadioBoxOn8px.h"
+#include "icons/IconRadioBoxOff8px.h"
+
+#include "emem.hpp"
 
 #include "types.hpp"
 #include "iscreen.hpp"
@@ -25,6 +29,7 @@
 #include "uie/include/input_select.hpp"
 #include "uie/include/input_dialog.hpp"
 #include "uie/include/checkbox.hpp"
+#include "uie/include/message.hpp"
 
 namespace gui
 {
@@ -41,6 +46,7 @@ namespace gui
         char *_strCooling = "Охлаждение";
         char *_strNtc = "NTC термистр";
         char *_strResetCfg = "Сбросить настройки";
+        char *_strResetNotification = "Настройки сброшены!";
 
 
         char *_strSelectCoolingNtc = "Ntc";
@@ -74,6 +80,8 @@ namespace gui
         qymos::gui::Text _textResetCfgInputOk;
         qymos::gui::Text _textResetCfgInputCancel;
 
+        qymos::gui::Text _textResetNotification;
+
         qymos::gui::Bitmap _iconConfig;
         qymos::gui::Bitmap _iconBack;
         qymos::gui::Bitmap _iconClock;
@@ -81,15 +89,18 @@ namespace gui
         qymos::gui::Bitmap _iconNtc;
         qymos::gui::Bitmap _iconCooling;
         qymos::gui::Bitmap _iconReset;
+        qymos::gui::Bitmap _iconRadioBoxOn;
+        qymos::gui::Bitmap _iconRadioBoxOff;
 
 
-        qymos::gui::CheckBox _checkBoxSelected;
-        qymos::gui::CheckBox _checkBoxNotSelected;
+        qymos::gui::CheckBox _checkBox;
 
         qymos::gui::InputTime _inputTime;
         qymos::gui::InputSelect _inputSelectCooling;
         qymos::gui::InputSelect _inputSelectNtc;
         qymos::gui::InputDialog _inputResetCfgConfirm;
+
+        qymos::gui::Message _messageResetNotification;
 
         qymos::gui::Window _window;
 
@@ -98,11 +109,12 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarchy = qymos::gui::Hierarchy::GetInstance();
 
-        bool _isInputShow[5] = {
+        Emem *_emem = Emem::GetInstance();
+
+        bool _isInputShow[6] = {
             false,
         };
 
-        bool _soundState = false;
 
     public:
         ScreenConfigDefault();

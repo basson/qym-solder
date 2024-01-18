@@ -132,6 +132,7 @@ void Control::ProcessHakktoT12()
     _pidDataHakkoT12.Kp = _emem->Param().ironKp;
     _pidDataHakkoT12.Ki = _emem->Param().ironKi;
     _pidDataHakkoT12.Kd = _emem->Param().ironKd;
+    
 
     qymos::common::Pid::SetData(&_pidDataHakkoT12);
     qymos::common::Pid::Process();

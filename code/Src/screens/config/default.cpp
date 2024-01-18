@@ -52,6 +52,9 @@ namespace gui
         _textResetCfgInputCancel.SetFont(&HellenicaRus8px);
         _textResetCfgInputCancel.SetText(_strResetCfgInputCancel);
 
+        _textResetNotification.SetFont(&HellenicaRus8px);
+        _textResetNotification.SetText(_strResetNotification);
+
         _iconConfig.SetImage(&IconConfig8px);
         _iconBack.SetImage(&IconBack8px);
         _iconClock.SetImage(&IconClock8px);
@@ -59,11 +62,12 @@ namespace gui
         _iconNtc.SetImage(&IconNtc8px);
         _iconCooling.SetImage(&IconCooling8px);
         _iconReset.SetImage(&IconReset8px);
+        _iconRadioBoxOn.SetImage(&IconRadioBoxOn8px);
+        _iconRadioBoxOff.SetImage(&IconRadioBoxOff8px);
 
-        _checkBoxSelected.SetPosition({0, 0, 8, 8});
-        _checkBoxSelected.SetCheck(true);
-        _checkBoxNotSelected.SetPosition({0, 0, 8, 8});
-        _checkBoxNotSelected.SetCheck(false);
+        _checkBox.SetImageCheck(&_iconRadioBoxOn);
+        _checkBox.SetImageUncheck(&_iconRadioBoxOff);
+        _checkBox.SetPosition({0, 0, 8, 8});
 
         _inputTime.SetFont(&HellenicaRus8px);
         _inputTime.SetPosition({20, 16, 88, 64 - 32});
@@ -71,14 +75,14 @@ namespace gui
 
         _inputSelectCooling.SetPosition({20, 16, 128 - 40, 28});
         _inputSelectCooling.SetItemHeight(12);
-        _inputSelectCooling.AddItem(&_textSelectCoolingNtc, &_checkBoxSelected);
-        _inputSelectCooling.AddItem(&_textSelectCoolingAlways, &_checkBoxNotSelected);
+        _inputSelectCooling.AddItem(&_textSelectCoolingAlways, &_checkBox);
+        _inputSelectCooling.AddItem(&_textSelectCoolingNtc, &_checkBox);
         _inputSelectCooling.Visible(false);
 
         _inputSelectNtc.SetPosition({30, 16, 128 - 60, 28});
-        _inputSelectNtc.AddItem(&_textSelectNtcNone, &_checkBoxNotSelected);
-        _inputSelectNtc.AddItem(&_textSelectNtc10k, &_checkBoxSelected);
-        _inputSelectNtc.AddItem(&_textSelectNtc100k, & _checkBoxNotSelected);
+        _inputSelectNtc.AddItem(&_textSelectNtcNone, &_checkBox);
+        _inputSelectNtc.AddItem(&_textSelectNtc10k, &_checkBox);
+        _inputSelectNtc.AddItem(&_textSelectNtc100k, &_checkBox);
         _inputSelectNtc.SetItemHeight(12);
         _inputSelectNtc.Visible(false);
 
@@ -87,6 +91,10 @@ namespace gui
         _inputResetCfgConfirm.SetOkText(&_textResetCfgInputOk);
         _inputResetCfgConfirm.SetCancelText(&_textResetCfgInputCancel);
         _inputResetCfgConfirm.Visible(false);
+
+        _messageResetNotification.SetPosition({0, 16, 128, 32});
+        _messageResetNotification.SetMessageText(&_textResetNotification);
+        _messageResetNotification.Visible(false);
 
         _list.SetPosition({2, 13, 124, 49});
         _list.SetItemHeight(12);
@@ -104,6 +112,7 @@ namespace gui
         _layout.SetElement(&_inputSelectCooling);
         _layout.SetElement(&_inputSelectNtc);
         _layout.SetElement(&_inputResetCfgConfirm);
+        _layout.SetElement(&_messageResetNotification);
 
         _window.SetTitle(&_titleText, &_iconConfig);
         _window.SetTitleHeight(12);
@@ -117,6 +126,10 @@ namespace gui
     }
     void ScreenConfigDefault::Process()
     {
+        if (_emem->Param().defaultSound)
+            _textSound.SetText(_strSoundOn);
+        else
+            _textSound.SetText(_strSoundOff);
     }
     void ScreenConfigDefault::OnEncoderDirection(bool direction)
     {
@@ -139,9 +152,15 @@ namespace gui
             _inputSelectNtc.ChangeActiveByDirection(direction);
             return;
         }
-        if (_isInputShow[4])
+        if (_isInputShow[4] && !_isInputShow[5])
         {
             _inputResetCfgConfirm.Toggle();
+            return;
+        }
+        if(_isInputShow[5])
+        {
+            _isInputShow[5] = false;
+            _messageResetNotification.Visible(_isInputShow[5]);
             return;
         }
 
@@ -165,36 +184,75 @@ namespace gui
             break;
         case 1:
             _isInputShow[0] = !_isInputShow[0];
-            _inputTime.SetSeconds(5);
-            _inputTime.SetMinutes(7);
-            _inputTime.SetHours(1);
+            _inputTime.SetSeconds(_emem->Param().defaultTimeOff[2]);
+            _inputTime.SetMinutes(_emem->Param().defaultTimeOff[1]);
+            _inputTime.SetHours(_emem->Param().defaultTimeOff[0]);
             _inputTime.Visible(_isInputShow[0]);
             break;
         case 2:
             _isInputShow[1] = !_isInputShow[1];
-            _inputTime.SetSeconds(2);
-            _inputTime.SetMinutes(3);
-            _inputTime.SetHours(7);
+            _inputTime.SetSeconds(_emem->Param().defaultTimeShutdown[2]);
+            _inputTime.SetMinutes(_emem->Param().defaultTimeShutdown[1]);
+            _inputTime.SetHours(_emem->Param().defaultTimeShutdown[0]);
             _inputTime.Visible(_isInputShow[1]);
             break;
         case 3:
-            _soundState = !_soundState;
-            if (_soundState)
-                _textSound.SetText(_strSoundOn);
-            else
-                _textSound.SetText(_strSoundOff);
+            _emem->Param().defaultSound = !_emem->Param().defaultSound;
+            _emem->Save();
             break;
         case 4:
-            _isInputShow[2] = !_isInputShow[2];
+            if (!_isInputShow[2])
+            {
+                _inputSelectCooling.SetActiveItem(_emem->Param().defualtCooling);
+                _inputSelectCooling.SetAllItemCheck(false);
+                _inputSelectCooling.SetItemCheck(_emem->Param().defualtCooling, true);
+                _isInputShow[2] = true;
+            }
+            else
+            {
+                _inputSelectCooling.SetAllItemCheck(false);
+                _inputSelectCooling.SetItemCheck(_inputSelectCooling.GetActiveItem(), true);
+                _emem->Param().defualtCooling = _inputSelectCooling.GetActiveItem();
+            }
             _inputSelectCooling.Visible(_isInputShow[2]);
             break;
         case 5:
-            _isInputShow[3] = !_isInputShow[3];
+            if (!_isInputShow[3])
+            {
+                _inputSelectNtc.SetActiveItem(_emem->Param().defaultNtc);
+                _inputSelectNtc.SetAllItemCheck(false);
+                _inputSelectNtc.SetItemCheck(_emem->Param().defaultNtc, true);
+                _isInputShow[3] = true;
+            }
+            else
+            {
+                _inputSelectNtc.SetAllItemCheck(false);
+                _inputSelectNtc.SetItemCheck(_inputSelectNtc.GetActiveItem(), true);
+                _emem->Param().defaultNtc = _inputSelectNtc.GetActiveItem();
+            }
             _inputSelectNtc.Visible(_isInputShow[3]);
             break;
         case 6:
-            _isInputShow[4] = !_isInputShow[4];
+            if (!_isInputShow[4] && !_isInputShow[5])
+            {
+                _inputResetCfgConfirm.SetVariant(qymos::gui::InputDialog::VARIANT_CANCEL);
+                _isInputShow[4] = true;
+            }
+            else if(_isInputShow[4] && !_isInputShow[5])
+            {
+                if (_inputResetCfgConfirm.GetResult())
+                {
+                    _emem->WriteDefault();
+                    _isInputShow[5] = true;
+                }
+                
+                _isInputShow[4] = false;
+            }
+            else
+                _isInputShow[5] = false;
             _inputResetCfgConfirm.Visible(_isInputShow[4]);
+            _messageResetNotification.Visible(_isInputShow[5]);
+            break;
         default:
             break;
         }
@@ -204,12 +262,31 @@ namespace gui
         switch (_list.GetActiveItem())
         {
         case 1:
-        case 2:
             _isInputShow[0] = false;
-            _isInputShow[1] = false;
-            _inputTime.Visible(false);
+            _emem->Param().defaultTimeOff[2] = _inputTime.GetSeconds();
+            _emem->Param().defaultTimeOff[1] = _inputTime.GetMinutes();
+            _emem->Param().defaultTimeOff[0] = _inputTime.GetHours();
+            _emem->Save();
+            _inputTime.Visible(_isInputShow[0]);
             break;
-
+        case 2:
+            _isInputShow[1] = false;
+            _emem->Param().defaultTimeShutdown[2] = _inputTime.GetSeconds();
+            _emem->Param().defaultTimeShutdown[1] = _inputTime.GetMinutes();
+            _emem->Param().defaultTimeShutdown[0] = _inputTime.GetHours();
+            _emem->Save();
+            _inputTime.Visible(_isInputShow[1]);
+            break;
+        case 4:
+            _isInputShow[2] = false;
+            _emem->Save();
+            _inputSelectCooling.Visible(_isInputShow[2]);
+            break;
+        case 5:
+            _isInputShow[3] = false;
+            _emem->Save();
+            _inputSelectNtc.Visible(_isInputShow[3]);
+            break;
         default:
             break;
         }
