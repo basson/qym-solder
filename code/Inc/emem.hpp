@@ -21,7 +21,7 @@ private:
 
         uint8_t t12MinTemp = 50;
         uint16_t t12MaxTemp = 360;
-        uint16_t t12SetTemp = 0;
+        uint16_t t12SetTemp = 50;
         int8_t t12Calibration = 0;
         float t12Kp = 800;
         float t12Ki = 1;
@@ -29,25 +29,24 @@ private:
         bool t12Sensor = false;
         uint8_t t12TimeSleep[3] = {0, 5, 0};
         uint16_t t12TempSleep = 100;
+        uint8_t t12Ntc = 0; // 0 - none | 1 - 10K | 2 - 100K
 
-        uint8_t fanMinTemp = 50;
-        uint16_t fanMaxTemp = 360;
-        uint16_t fanSetTemp = 0;
-        int8_t fanCalibration = 0;
-        float fanKp = 0.8;
-        float fanKi =  0.0003;
-        float fanKd = 10.25;
-        
-        uint8_t fanMinFlow = 10;
-        uint16_t fanMaxFlow = 100;
-        uint16_t fanSetFlow = 100;
-        bool fanSensor = false;
-        uint8_t fanTimeSleep[3] = {0, 5, 0};
-        uint16_t fanTempSleep = 100;
+        uint8_t hairMinTemp = 50;
+        uint16_t hairMaxTemp = 360;
+        uint16_t hairSetTemp = 50;
+        int8_t hairCalibration = 0;
+        float hairKp = 0.8;
+        float hairKi =  0.0003;
+        float hairKd = 10.25;
+        uint8_t hairMinFlow = 10;
+        uint16_t hairMaxFlow = 100;
+        uint16_t hairSetFlow = 100;
+        bool hairSensor = false;
+        uint8_t hairNtc = 0; // 0 - none | 1 - 10K | 2 - 100K
 
         uint8_t ironMinTemp = 50;
         uint16_t ironMaxTemp = 360;
-        uint16_t ironSetTemp = 0;
+        uint16_t ironSetTemp = 50;
         int8_t ironCalibration = 0;
         float ironKp = 800;
         float ironKi = 1;
@@ -55,6 +54,7 @@ private:
         bool ironSensor = false;
         uint8_t ironTimeSleep[3] = {0, 5, 0};
         uint16_t ironTempSleep = 100;
+        uint8_t ironNtc = 0; // 0 - none | 1 - 10K | 2 - 100K
     } _memory;
 
     uint8_t _memorySize = sizeof(MemStruct);

@@ -52,11 +52,12 @@ namespace gui
         _iconTemp.SetImage(&IconTemp8px);
         _iconPid.SetImage(&IconPid8px);
         _iconNtc.SetImage(&IconNtc8px);
+        _iconRadioBoxOn.SetImage(&IconRadioBoxOn8px);
+        _iconRadioBoxOff.SetImage(&IconRadioBoxOff8px);
 
-        _checkBoxSelected.SetPosition({0, 0, 8, 8});
-        _checkBoxSelected.SetCheck(true);
-        _checkBoxNotSelected.SetPosition({0, 0, 8, 8});
-        _checkBoxNotSelected.SetCheck(false);
+        _checkBox.SetImageCheck(&_iconRadioBoxOn);
+        _checkBox.SetImageUncheck(&_iconRadioBoxOff);
+        _checkBox.SetPosition({0, 0, 8, 8});
 
         _inputTime.SetFont(&HellenicaRus8px);
         _inputTime.SetPosition({20, 16, 88, 64 - 32});
@@ -70,9 +71,9 @@ namespace gui
         _inputInt.Visible(false);
 
         _inputSelectNtc.SetPosition({30, 16, 128 - 60, 28});
-        _inputSelectNtc.AddItem(&_textSelectNtcNone, &_checkBoxNotSelected);
-        _inputSelectNtc.AddItem(&_textSelectNtc10k, &_checkBoxSelected);
-        _inputSelectNtc.AddItem(&_textSelectNtc100k, &_checkBoxNotSelected);
+        _inputSelectNtc.AddItem(&_textSelectNtcNone, &_checkBox);
+        _inputSelectNtc.AddItem(&_textSelectNtc10k, &_checkBox);
+        _inputSelectNtc.AddItem(&_textSelectNtc100k, &_checkBox);
         _inputSelectNtc.SetItemHeight(12);
         _inputSelectNtc.Visible(false);
 
@@ -105,6 +106,10 @@ namespace gui
     }
     void ScreenConfigSolderHand::Process()
     {
+        if (_emem->Param().ironSensor)
+            _textSensor.SetText(_strSensorOn);
+        else
+            _textSensor.SetText(_strSensorOff);
     }
     void ScreenConfigSolderHand::OnEncoderDirection(bool direction)
     {
@@ -150,42 +155,63 @@ namespace gui
             _isInputShow[0] = !_isInputShow[0];
             _inputInt.SetMax(10);
             _inputInt.SetMin(-10);
-            _inputInt.SetValue(0);
+            if (_isInputShow[0])
+                _inputInt.SetValue(_emem->Param().ironCalibration);
+            else
+            {
+                _emem->Param().ironCalibration = _inputInt.GetValue();
+                _emem->Save();
+            }
             _inputInt.Visible(_isInputShow[0]);
             break;
         case 2:
             _isInputShow[1] = !_isInputShow[1];
-            _inputInt.SetMax(200);
+            _inputInt.SetMax(100);
             _inputInt.SetMin(50);
-            _inputInt.SetValue(150);
+            if (_isInputShow[1])
+                _inputInt.SetValue(_emem->Param().ironMinTemp);
+            else
+            {
+                _emem->Param().ironMinTemp = _inputInt.GetValue();
+                _emem->Save();
+            }
             _inputInt.Visible(_isInputShow[1]);
             break;
         case 3:
             _isInputShow[2] = !_isInputShow[2];
             _inputInt.SetMax(400);
-            _inputInt.SetMin(150);
-            _inputInt.SetValue(200);
+            _inputInt.SetMin(_emem->Param().ironMinTemp);
+            if (_isInputShow[2])
+                _inputInt.SetValue(_emem->Param().ironMaxTemp);
+            else
+            {
+                _emem->Param().ironMaxTemp = _inputInt.GetValue();
+                _emem->Save();
+            }
             _inputInt.Visible(_isInputShow[2]);
             break;
         case 4:
-            _sensorState = !_sensorState;
-            if (_sensorState)
-                _textSensor.SetText(_strSensorOn);
-            else
-                _textSensor.SetText(_strSensorOff);
+            _emem->Param().ironSensor = !_emem->Param().ironSensor;
+            _emem->Save();
             break;
         case 5:
             _isInputShow[3] = !_isInputShow[3];
-            _inputTime.SetSeconds(10);
-            _inputTime.SetMinutes(10);
-            _inputTime.SetHours(0);
+            _inputTime.SetSeconds(_emem->Param().ironTimeSleep[2]);
+            _inputTime.SetMinutes(_emem->Param().ironTimeSleep[1]);
+            _inputTime.SetHours(_emem->Param().ironTimeSleep[0]);
             _inputTime.Visible(_isInputShow[3]);
             break;
         case 6:
             _isInputShow[4] = !_isInputShow[4];
-            _inputInt.SetMax(200);
-            _inputInt.SetMin(100);
-            _inputInt.SetValue(110);
+            _inputInt.SetMax(250);
+            _inputInt.SetMin(_emem->Param().ironMinTemp);
+            if (_isInputShow[4])
+                _inputInt.SetValue(_emem->Param().ironTempSleep);
+            else
+            {
+                _emem->Param().ironTempSleep = _inputInt.GetValue();
+                _emem->Save();
+            }
             _inputInt.Visible(_isInputShow[4]);
             break;
         case 7:
@@ -193,8 +219,21 @@ namespace gui
             _hierarhy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
             break;
         case 8:
-            _isInputShow[5] = !_isInputShow[5];
+            if (!_isInputShow[5])
+            {
+                _inputSelectNtc.SetActiveItem(_emem->Param().ironNtc);
+                _inputSelectNtc.SetAllItemCheck(false);
+                _inputSelectNtc.SetItemCheck(_emem->Param().ironNtc, true);
+                _isInputShow[5] = true;
+            }
+            else
+            {
+                _inputSelectNtc.SetAllItemCheck(false);
+                _inputSelectNtc.SetItemCheck(_inputSelectNtc.GetActiveItem(), true);
+                _emem->Param().ironNtc = _inputSelectNtc.GetActiveItem();
+            }
             _inputSelectNtc.Visible(_isInputShow[5]);
+            break;
         default:
             break;
         }
@@ -206,8 +245,16 @@ namespace gui
         case 5:
             _isInputShow[3] = false;
             _inputTime.Visible(false);
+            _emem->Param().ironTimeSleep[2] = _inputTime.GetSeconds();
+            _emem->Param().ironTimeSleep[1] = _inputTime.GetMinutes();
+            _emem->Param().ironTimeSleep[0] = _inputTime.GetHours();
+            _emem->Save();
             break;
-
+        case 8:
+            _isInputShow[5] = false;
+            _emem->Save();
+            _inputSelectNtc.Visible(_isInputShow[3]);
+            break;
         default:
             break;
         }

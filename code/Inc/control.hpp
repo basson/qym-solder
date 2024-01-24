@@ -30,11 +30,15 @@ public:
 
     void Process();
 
-    static void SetAdcNtcHakkoT12(uint16_t value);
-    static void SetAdcCoupleSolderHand(uint16_t value);
-    static void SetAdcNtcSolderHand(uint16_t value);
-    static void SetAdcCoupleHairGun(uint16_t value);
-    static void SetAdcNtcHairGun(uint16_t value);
+    void CallbackHakkoT12Move();
+    void CallbackSolderHandMove();
+    void CallbackHairGunStand(bool direction);
+
+    void SetAdcNtcHakkoT12(uint16_t value);
+    void SetAdcCoupleSolderHand(uint16_t value);
+    void SetAdcNtcSolderHand(uint16_t value);
+    void SetAdcCoupleHairGun(uint16_t value);
+    void SetAdcNtcHairGun(uint16_t value);
 
     static uint16_t GetCurrentTempHakkoT12();
     static uint16_t GetCurrentTempSolderHand();
@@ -43,6 +47,8 @@ public:
     static State StateHakkoT12(State state = CONTROL_STATE_MAX);
     static State StateSolderHand(State state = CONTROL_STATE_MAX);
     static State StateHairGun(State state = CONTROL_STATE_MAX);
+
+    
 
 private:
     static uint16_t _adcCoupleHacckoT12;
@@ -63,11 +69,13 @@ private:
     static State _stateSolderHand;
     static State _stateHairGun;
 
-    struct {
+    struct Trigger {
         bool hakkoT12 = false;
         bool solderHand = false;
         bool hairGun = false;
-    } _trigger;
+    };
+
+    static Trigger _trigger;
 
     Emem *_emem;
 
@@ -85,8 +93,6 @@ private:
 
     qymos::common::time::SoftTimer _timerHakkoT12;
     qymos::common::time::SoftTimer _timerSolderHand;
-
-    qymos::common::time::SoftTimer _timerHairGun; /// TODO: Обдумать момент с отключением по таймер паяльного фена
 
     void ProcessHakktoT12();
     void ProcessSolderHand();

@@ -73,6 +73,7 @@ int main(void)
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   
   Initialize();
   /* USER CODE END 2 */

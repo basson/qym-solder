@@ -27,20 +27,90 @@ namespace gui
         return &_tabPage;
     }
 
-    void ScreenSolderHand::OnEncoderDirection(bool direction)
-    {
-    }
-    void ScreenSolderHand::OnEncoderValue(uint32_t value)
-    {
-    }
-
     void ScreenSolderHand::Process()
     {
+        uint16_t showTemp;
+        char buf[8] = "";
+
+        switch (Control::StateSolderHand())
+        {
+        case Control::CONTROL_STATE_ON:
+            _iconHeat.Visible(true);
+            break;
+        case Control::CONTROL_STATE_OFF:
+            _iconHeat.Visible(false);
+        default:
+            break;
+        }
+
+        if (_isChangeSetTemp)
+        {
+            showTemp = _emem->Param().ironSetTemp;
+            if (HAL_GetTick() > _millis)
+            {
+                if (!_isInvert)
+                    _millis = 100;
+                else
+                    _millis = 500;
+                _isInvert = !_isInvert;
+                _millis += HAL_GetTick();
+            }
+            _iconHeat.Visible(true);
+        }
+        else
+            showTemp = Control::GetCurrentTempSolderHand() + _emem->Param().ironCalibration;
+
+        itoa(showTemp, _strCurrent, 10);
+        strcat(_strCurrent, "°");
+        if (showTemp < 100)
+        {
+            buf[0] = '0';
+            strcat(buf, _strCurrent);
+            strcpy(_strCurrent, buf);
+        }
+        _textCurrent.SetText(_strCurrent);
+        _textCurrent.SetInvert(_isInvert);
+
+        if (_emem->Param().ironSetTemp < 100)
+            strcpy(_strSet, "set:0");
+        else
+            strcpy(_strSet, "set:");
+        itoa(_emem->Param().ironSetTemp, buf, 10);
+        strcat(_strSet, buf);
+        strcat(_strSet, "°");
+        _textSet.SetText(_strSet);
     }
+
+    void ScreenSolderHand::OnEncoderDirection(bool direction)
+    {
+        if (!direction)
+            _emem->Param().ironSetTemp++;
+        else
+            _emem->Param().ironSetTemp--;
+
+        if (_emem->Param().ironSetTemp > _emem->Param().ironMaxTemp)
+            _emem->Param().ironSetTemp = _emem->Param().ironMaxTemp;
+        if (_emem->Param().ironSetTemp < _emem->Param().ironMinTemp)
+            _emem->Param().ironSetTemp = _emem->Param().ironMinTemp;
+    }
+
     void ScreenSolderHand::OnButtonClick()
     {
+        if (_isChangeSetTemp)
+            return;
+        Control::StateSolderHand(Control::State(!(bool)Control::StateSolderHand()));
     }
     void ScreenSolderHand::OnButtonLongClick()
+    {
+        _isChangeSetTemp = !_isChangeSetTemp;
+        if (!_isChangeSetTemp)
+        {
+            _emem->Save();
+            _isInvert = false;
+        }
+    }
+
+    void ScreenSolderHand::OnEncoderValue(uint32_t value)
     {
     }
 } // namespace gui

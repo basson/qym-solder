@@ -10,6 +10,10 @@
 #include "icons/IconTemp8px.h"
 #include "icons/IconNtc8px.h"
 #include "icons/IconPid8px.h"
+#include "icons/IconRadioBoxOn8px.h"
+#include "icons/IconRadioBoxOff8px.h"
+
+#include "emem.hpp"
 
 #include "types.hpp"
 #include "iscreen.hpp"
@@ -75,9 +79,10 @@ namespace gui
         qymos::gui::Bitmap _iconTemp;
         qymos::gui::Bitmap _iconNtc;
         qymos::gui::Bitmap _iconPid;
+        qymos::gui::Bitmap _iconRadioBoxOn;
+        qymos::gui::Bitmap _iconRadioBoxOff;
 
-        qymos::gui::CheckBox _checkBoxSelected;
-        qymos::gui::CheckBox _checkBoxNotSelected;
+        qymos::gui::CheckBox _checkBox;
 
         qymos::gui::InputInt _inputInt;
         qymos::gui::InputSelect _inputSelectNtc;
@@ -89,11 +94,11 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarhy = qymos::gui::Hierarchy::GetInstance();
 
+        Emem *_emem = Emem::GetInstance();
+
         bool _isInputShow[6]{
             false,
         };
-
-        bool _sensorState = false;
 
     public:
         ScreenConfigHairGun();

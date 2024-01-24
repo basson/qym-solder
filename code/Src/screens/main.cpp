@@ -51,6 +51,7 @@ namespace gui
     }
     void ScreenMain::OnButtonLongClick(uint16_t pin)
     {
+        _isActiveEdit = !_isActiveEdit;
         switch (_tabLayout.GetActiveTab())
         {
         case 0:
@@ -68,6 +69,25 @@ namespace gui
     }
     void ScreenMain::OnEncoderDirection(bool direction)
     {
+        if (_isActiveEdit)
+        {
+            switch (_tabLayout.GetActiveTab())
+            {
+            case 0:
+                _screenHakkoT12.OnEncoderDirection(direction);
+                break;
+            case 1:
+                _screenIron.OnEncoderDirection(direction);
+                break;
+            case 2:
+                _screenHair.OnEncoderDirection(direction);
+                break;
+            default:
+                break;
+            }
+
+            return;
+        }
         if (!direction)
             _activeTab++;
         else

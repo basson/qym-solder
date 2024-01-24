@@ -7,8 +7,11 @@
 
 #include "ssd1309.hpp"
 #include "m24cxx.hpp"
+#include "driver/buzzer.hpp"
 
 #include "emem.hpp"
+
+#include "hui/buzzer.hpp"
 
 #include "types.hpp"
 #include "iscreen.hpp"
@@ -27,11 +30,13 @@
 
 #include "control.hpp"
 
+qymos::driver::M24cxx m24cxx;
+qymos::driver::Ssd1309 graphicalDriver;
+qymos::driver::Buzzer buzzerDriver;
 
 Emem *emem = Emem::GetInstance();
 
-qymos::driver::M24cxx m24cxx;
-qymos::driver::Ssd1309 graphicalDriver;
+qymos::hui::Buzzer buzzer;
 
 uint8_t buffer[1024] = {0x00};
 qymos::gui::DisplayBuffer displayBuffer;
@@ -59,6 +64,13 @@ uint32_t lastEncoderValue = 1200 / 2;
 volatile uint16_t adcValue[7];
 volatile bool adcIrq = false;
 
+volatile bool hakkoT12MoveIrq = false;
+volatile uint32_t hakkoT12MoveMs = 0;
+volatile bool solderHandMoveIrq = false;
+volatile uint32_t solderHandMoveMs = 0;
+volatile bool hairGunStandIrq = false;
+volatile uint32_t hairGunStandMs = 0;
+
 void CreateHierarchy()
 {
     hierarchy->AddItem(SCREEN_MAIN, SCREEN_MAIN, &screenMain);
@@ -81,6 +93,10 @@ void Initialize()
 
     m24cxx.SetPort(&hi2c2);
     m24cxx.SetAddress(0xA0);
+
+    buzzerDriver.Initialize(BUZZER_GPIO_Port, BUZZER_Pin, true);
+
+    buzzer.Initialize(&buzzerDriver);
 
     emem->Initialize(&m24cxx);
 
@@ -105,20 +121,40 @@ void Main()
 {
 
     if (adcIrq)
+    {
+        control.SetAdcNtcHakkoT12(adcValue[3]);
+
+        control.SetAdcCoupleHairGun(adcValue[2]);
+        control.SetAdcNtcHairGun(adcValue[5]);
+
+        control.SetAdcCoupleSolderHand(adcValue[1]);
+        control.SetAdcNtcSolderHand(adcValue[4]);
+
+        // 6 - это NTC в корпусе
+        // 0 - это опорное на tl431 (2.5в)
+
+        adcIrq = false;
+    }
+
+    if (hakkoT12MoveIrq)
 	{
-		control.SetAdcNtcHakkoT12(adcValue[3]);
-
-		control.SetAdcCoupleHairGun(adcValue[2]);
-		control.SetAdcNtcHairGun(adcValue[5]);
-
-		control.SetAdcCoupleSolderHand(adcValue[1]);
-		control.SetAdcNtcSolderHand(adcValue[4]);
-
-		// 6 - это NTC в корпусе
-		// 0 - это опорное на tl431 (2.5в)
-
-		adcIrq = false;
+		if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - hakkoT12MoveMs > 1)
+            control.CallbackHakkoT12Move();
+		hakkoT12MoveIrq = false;
 	}
+    if (solderHandMoveIrq)
+	{
+		if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - solderHandMoveMs > 1)
+            control.CallbackSolderHandMove();
+		solderHandMoveIrq = false;
+	}
+    if (hairGunStandIrq)
+	{
+		if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - hairGunStandMs > 1)
+            control.CallbackHairGunStand(HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin));
+		hairGunStandIrq = false;
+	}
+
     control.Process();
 
     if (btnEncoderIrq)
@@ -127,9 +163,15 @@ void Main()
         {
 
             if (HAL_GetTick() - btnEncoderPushedMs <= 500)
+            {
                 hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonClick(ENC_SW_Pin);
+                buzzer.Beep(4);
+            }
             else
+            {
                 hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonLongClick(ENC_SW_Pin);
+                buzzer.Beep(100);
+            }
             btnEncoderIrq = false;
         }
     }
@@ -143,6 +185,7 @@ void Main()
                     hierarchy->SetSelectedItem(SCREEN_CONFIG);
                 else if (hierarchy->GetSelectedItemId() == SCREEN_CONFIG)
                     hierarchy->SetSelectedItem(SCREEN_MAIN);
+                buzzer.Beep(200);
             }
             btnPowerIrq = false;
         }
@@ -154,6 +197,7 @@ void Main()
         lastEncoderValue = __HAL_TIM_GET_COUNTER(&htim1);
         hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnEncoderDirection(direction);
         hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnEncoderValue(lastEncoderValue);
+        buzzer.Beep(2);
     }
 
     hierarchy->GetItem(hierarchy->GetSelectedItemId())->Process();
@@ -164,15 +208,30 @@ void Main()
 
 void PinCallback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == ENC_SW_Pin)
+    switch (GPIO_Pin)
     {
+    case ENC_SW_Pin:
         btnEncoderPushedMs = HAL_GetTick();
         btnEncoderIrq = true;
-    }
-    if (GPIO_Pin == POWER_BTN_MCU_Pin)
-    {
+        break;
+    case POWER_BTN_MCU_Pin:
         btnPowerPushedMs = HAL_GetTick();
         btnPowerIrq = true;
+        break;
+    case T12_MOVE_Pin:
+        hakkoT12MoveMs = HAL_GetTick();
+        hakkoT12MoveIrq = true;
+        break;
+    case IRON_MOVE_Pin:
+        solderHandMoveMs = HAL_GetTick();
+        solderHandMoveIrq = true;
+        break;
+    case HAIR_MOVE_Pin:
+        hairGunStandMs = HAL_GetTick();
+        hairGunStandIrq = true;
+        break;
+    default:
+        break;
     }
 }
 

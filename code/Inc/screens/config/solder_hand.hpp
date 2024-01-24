@@ -10,6 +10,10 @@
 #include "icons/IconTemp8px.h"
 #include "icons/IconNtc8px.h"
 #include "icons/IconPid8px.h"
+#include "icons/IconRadioBoxOn8px.h"
+#include "icons/IconRadioBoxOff8px.h"
+
+#include "emem.hpp"
 
 #include "types.hpp"
 #include "iscreen.hpp"
@@ -26,6 +30,7 @@
 #include "uie/include/input_time.hpp"
 #include "uie/include/input_int.hpp"
 #include "uie/include/input_select.hpp"
+#include "uie/include/checkbox.hpp"
 
 #include "uie/include/window.hpp"
 #include "uie/include/layout.hpp"
@@ -76,9 +81,10 @@ namespace gui
         qymos::gui::Bitmap _iconTemp;
         qymos::gui::Bitmap _iconNtc;
         qymos::gui::Bitmap _iconPid;
+        qymos::gui::Bitmap _iconRadioBoxOn;
+        qymos::gui::Bitmap _iconRadioBoxOff;
 
-        qymos::gui::CheckBox _checkBoxSelected;
-        qymos::gui::CheckBox _checkBoxNotSelected;
+        qymos::gui::CheckBox _checkBox;
 
         qymos::gui::InputTime _inputTime;
         qymos::gui::InputInt _inputInt;
@@ -91,11 +97,11 @@ namespace gui
 
         qymos::gui::Hierarchy *_hierarhy = qymos::gui::Hierarchy::GetInstance();
 
+        Emem *_emem = Emem::GetInstance();
+
         bool _isInputShow[6]{
             false,
         };
-
-        bool _sensorState = false;
 
     public:
         ScreenConfigSolderHand();

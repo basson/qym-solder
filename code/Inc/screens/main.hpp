@@ -34,6 +34,7 @@ namespace gui
         qymos::gui::TabLayout _tabLayout;
 
         int8_t _activeTab = 0;
+        bool _isActiveEdit = false;
         
         ScreenHakkoT12 _screenHakkoT12;
         ScreenSolderHand _screenIron;

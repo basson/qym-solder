@@ -9,6 +9,8 @@
 
 #include "icons/IconHeat12px.h"
 
+#include "emem.hpp"
+
 #include "types.hpp"
 
 #include "uip/include/text.hpp"
@@ -32,17 +34,23 @@ namespace gui
 
         qymos::gui::TabPage _tabPage;
 
+        Emem *_emem = Emem::GetInstance();
+
+        bool _isChangeSetTemp = false;
+        bool _isInvert = false;
+        uint32_t _millis = 0;
+
     public:
         ScreenHakkoT12();
 
         qymos::gui::TabPage *GetPage();
 
-        void OnEncoderDirection(bool direction);
-        void OnEncoderValue(uint32_t value);
-
         void Process();
+
+        void OnEncoderDirection(bool direction);
         void OnButtonClick();
         void OnButtonLongClick();
+        void OnEncoderValue(uint32_t value);
     };
 
 } // namespace gui
