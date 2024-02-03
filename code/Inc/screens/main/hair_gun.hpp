@@ -11,12 +11,16 @@
 #include "icons/IconFlow12px.h"
 #include "icons/IconHeat12px.h"
 
+#include "emem.hpp"
+
 #include "types.hpp"
 
 #include "uip/include/text.hpp"
 #include "uip/include/bitmap.hpp"
 
 #include "uie/include/tab_page.hpp"
+
+#include "control.hpp"
 
 namespace gui
 {
@@ -37,6 +41,15 @@ namespace gui
         qymos::gui::Bitmap _iconFlow;
 
         qymos::gui::TabPage _tabPage;
+
+        Emem *_emem = Emem::GetInstance();
+
+        bool _isChangeSetTemp = false;
+        bool _isChangeSetFlow = false;
+        bool _isChange = false;
+        bool _isInvertTemp = false;
+        bool _isInvertFlow = false;
+        uint32_t _millis = 0;
 
     public:
         ScreenHAirGun();

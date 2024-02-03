@@ -115,6 +115,25 @@ void Initialize()
 
     hierarchy->SetSelectedItem(SCREEN_MAIN);
     // hierarchy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
+
+    // buzzer.Beep(10);
+
+	// HAL_Delay(100);
+
+	// if (!HAL_GPIO_ReadPin(POWER_BTN_MCU_GPIO_Port, POWER_BTN_MCU_Pin))
+	// {
+	// 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+    //     buzzer.Beep(80);
+    //     HAL_Delay(20);
+    //     buzzer.Beep(40);
+    //     HAL_Delay(20);
+    //     buzzer.Beep(40);
+    //     HAL_Delay(20);
+    //     buzzer.Beep(40);
+	// }
+
+    HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+
 }
 
 void Main()
@@ -179,12 +198,20 @@ void Main()
     {
         if (HAL_GPIO_ReadPin(POWER_BTN_MCU_GPIO_Port, POWER_BTN_MCU_Pin))
         {
-            if (HAL_GetTick() - btnPowerPushedMs >= 500)
+            if (HAL_GetTick() - btnPowerPushedMs < 500)
             {
                 if (hierarchy->GetSelectedItemId() == SCREEN_MAIN)
                     hierarchy->SetSelectedItem(SCREEN_CONFIG);
                 else if (hierarchy->GetSelectedItemId() == SCREEN_CONFIG)
                     hierarchy->SetSelectedItem(SCREEN_MAIN);
+                buzzer.Beep(10);
+            }
+            else
+            {
+                // if (HAL_GPIO_ReadPin(POWER_ON_GPIO_Port, POWER_ON_Pin))
+				// 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
+				// else
+				// 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
                 buzzer.Beep(200);
             }
             btnPowerIrq = false;

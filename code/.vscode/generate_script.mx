@@ -1,0 +1,5 @@
+
+config load /home/basson/Develop/Main/qym-solder/code/QSTest.ioc
+project generate /home/basson/Develop/Main/qym-solder/code
+exit
+		

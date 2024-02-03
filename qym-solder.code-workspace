@@ -11,6 +11,10 @@
 		"files.associations": {
 			"limits": "cpp",
 			"type_traits": "cpp"
-		}
+		},
+		"stm32cubemxpio.STM32CubeMxExec": "stm32cubemx",
+		"stm32cubemxpio.ProjectType": "C++",
+		"stm32cubemxpio.ProjectIOCFile": "QSTest.ioc",
+		"stm32cubemxpio.CleanUnnecessaryFiles": true
 	}
 }
