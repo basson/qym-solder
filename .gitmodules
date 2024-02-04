@@ -10,3 +10,9 @@
 [submodule "code/lib/qymos-stm32-common"]
 	path = code/lib/qymos-stm32-common
 	url = https://github.com/basson/qymos-stm32-common.git
+[submodule "code/lib/qymos-stm32-driver-buzzer"]
+	path = code/lib/qymos-stm32-driver-buzzer
+	url = https://github.com/basson/qymos-stm32-driver-buzzer.git
+[submodule "code/lib/qymos-stm32-hui"]
+	path = code/lib/qymos-stm32-hui
+	url = https://github.com/basson/qymos-stm32-hui.git

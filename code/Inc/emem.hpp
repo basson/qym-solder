@@ -2,7 +2,7 @@
 
 #include "stdint.h"
 
-#include "m24cxx.hpp"
+#include "drivers/m24cxx.hpp"
 
 class Emem
 {

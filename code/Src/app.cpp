@@ -5,9 +5,9 @@
 #include "tim.h"
 #include "gpio.h"
 
-#include "ssd1309.hpp"
-#include "m24cxx.hpp"
-#include "driver/buzzer.hpp"
+#include "drivers/ssd1309.hpp"
+#include "drivers/m24cxx.hpp"
+#include "drivers/buzzer.hpp"
 
 #include "emem.hpp"
 
