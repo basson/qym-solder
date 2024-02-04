@@ -44,7 +44,7 @@
      } tFont;
 */
 
-#include "../lib/qymos-stm32-gui-monochrome/types.hpp"
+#include "gui/types.hpp"
 
 
 

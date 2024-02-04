@@ -11,17 +11,17 @@
 #include "icons/IconD8928px.h"
 #include "icons/IconFan8px.h"
 
-#include "types.hpp"
-#include "iscreen.hpp"
-#include "hierarchy.hpp"
+#include "gui/types.hpp"
+#include "gui/iscreen.hpp"
+#include "gui/hierarchy.hpp"
 
 #include "screens.hpp"
 
-#include "uip/include/text.hpp"
+#include "gui/uip/text.hpp"
 
-#include "uie/include/window.hpp"
-#include "uie/include/layout.hpp"
-#include "uie/include/list.hpp"
+#include "gui/uie/window.hpp"
+#include "gui/uie/layout.hpp"
+#include "gui/uie/list.hpp"
 
 namespace gui
 {

@@ -14,22 +14,22 @@
 
 #include "emem.hpp"
 
-#include "types.hpp"
-#include "iscreen.hpp"
-#include "hierarchy.hpp"
+#include "gui/types.hpp"
+#include "gui/iscreen.hpp"
+#include "gui/hierarchy.hpp"
 
 #include "screens.hpp"
 
-#include "uip/include/text.hpp"
+#include "gui/uip/text.hpp"
 
-#include "uie/include/window.hpp"
-#include "uie/include/layout.hpp"
-#include "uie/include/list.hpp"
-#include "uie/include/input_time.hpp"
-#include "uie/include/input_select.hpp"
-#include "uie/include/input_dialog.hpp"
-#include "uie/include/checkbox.hpp"
-#include "uie/include/message.hpp"
+#include "gui/uie/window.hpp"
+#include "gui/uie/layout.hpp"
+#include "gui/uie/list.hpp"
+#include "gui/uie/input_time.hpp"
+#include "gui/uie/input_select.hpp"
+#include "gui/uie/input_dialog.hpp"
+#include "gui/uie/checkbox.hpp"
+#include "gui/uie/message.hpp"
 
 namespace gui
 {

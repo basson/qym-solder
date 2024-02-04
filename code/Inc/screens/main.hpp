@@ -4,15 +4,15 @@
 #include "fonts/HellenicaRus12px.h"
 #include "fonts/HellenicaRus8px.h"
 
-#include "types.hpp"
-#include "iscreen.hpp"
+#include "gui/types.hpp"
+#include "gui/iscreen.hpp"
 
-#include "uip/include/text.hpp"
+#include "gui/uip/text.hpp"
 
-#include "uie/include/tab.hpp"
-#include "uie/include/tab_bar.hpp"
-#include "uie/include/tab_layout.hpp"
-#include "uie/include/tab_page.hpp"
+#include "gui/uie/tab.hpp"
+#include "gui/uie/tab_bar.hpp"
+#include "gui/uie/tab_layout.hpp"
+#include "gui/uie/tab_page.hpp"
 
 #include "screens/main/hakko_t12.hpp"
 #include "screens/main/solder_hand.hpp"

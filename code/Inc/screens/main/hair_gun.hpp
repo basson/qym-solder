@@ -13,12 +13,12 @@
 
 #include "emem.hpp"
 
-#include "types.hpp"
+#include "gui/types.hpp"
 
-#include "uip/include/text.hpp"
-#include "uip/include/bitmap.hpp"
+#include "gui/uip/text.hpp"
+#include "gui/uip/bitmap.hpp"
 
-#include "uie/include/tab_page.hpp"
+#include "gui/uie/tab_page.hpp"
 
 #include "control.hpp"
 

@@ -5,18 +5,18 @@
 #include "fonts/HellenicaRus8px.h"
 #include "icons/IconPid8px.h"
 
-#include "types.hpp"
-#include "iscreen.hpp"
-#include "hierarchy.hpp"
+#include "gui/types.hpp"
+#include "gui/iscreen.hpp"
+#include "gui/hierarchy.hpp"
 
 #include "screens.hpp"
 
-#include "uip/include/text.hpp"
+#include "gui/uip/text.hpp"
 
-#include "uie/include/progress.hpp"
+#include "gui/uie/progress.hpp"
 
-#include "uie/include/window.hpp"
-#include "uie/include/layout.hpp"
+#include "gui/uie/window.hpp"
+#include "gui/uie/layout.hpp"
 
 namespace gui
 {

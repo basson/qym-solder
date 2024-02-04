@@ -13,9 +13,9 @@
 
 #include "hui/buzzer.hpp"
 
-#include "types.hpp"
-#include "iscreen.hpp"
-#include "hierarchy.hpp"
+#include "gui/types.hpp"
+#include "gui/iscreen.hpp"
+#include "gui/hierarchy.hpp"
 
 #include "screens.hpp"
 
