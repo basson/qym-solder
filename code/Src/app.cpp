@@ -12,6 +12,8 @@
 #include "emem.hpp"
 
 #include "hui/buzzer.hpp"
+#include "hui/button.hpp"
+#include "hui/button_irq.hpp"
 
 #include "gui/types.hpp"
 #include "gui/iscreen.hpp"
@@ -37,6 +39,9 @@ qymos::driver::Buzzer buzzerDriver;
 Emem *emem = Emem::GetInstance();
 
 qymos::hui::Buzzer buzzer;
+qymos::hui::Button buttonEncoder;
+qymos::hui::Button buttonPower;
+qymos::hui::ButtonIrq buttonIrq;
 
 uint8_t buffer[1024] = {0x00};
 qymos::gui::DisplayBuffer displayBuffer;
@@ -52,12 +57,6 @@ gui::ScreenConfigHairGun screenConfigHairGun;
 gui::ScreenPidAutoTune screenConfigPidAutotune;
 
 Control control;
-
-volatile bool btnEncoderIrq = false;
-volatile uint32_t btnEncoderPushedMs = 0;
-
-volatile bool btnPowerIrq = false;
-volatile uint32_t btnPowerPushedMs = 0;
 
 uint32_t lastEncoderValue = 1200 / 2;
 
@@ -118,11 +117,11 @@ void Initialize()
 
     // buzzer.Beep(10);
 
-	// HAL_Delay(100);
+    // HAL_Delay(100);
 
-	// if (!HAL_GPIO_ReadPin(POWER_BTN_MCU_GPIO_Port, POWER_BTN_MCU_Pin))
-	// {
-	// 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+    // if (!HAL_GPIO_ReadPin(POWER_BTN_MCU_GPIO_Port, POWER_BTN_MCU_Pin))
+    // {
+    // 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
     //     buzzer.Beep(80);
     //     HAL_Delay(20);
     //     buzzer.Beep(40);
@@ -130,10 +129,26 @@ void Initialize()
     //     buzzer.Beep(40);
     //     HAL_Delay(20);
     //     buzzer.Beep(40);
-	// }
+    // }
 
-    HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+    buttonEncoder.port = ENC_SW_GPIO_Port;
+    buttonEncoder.pin = ENC_SW_Pin;
+    buttonEncoder.edge = true;
+    buttonEncoder.longClickMs = 500;
+    buttonEncoder.OnClick = ButtonEncoderOnClick;
+    buttonEncoder.OnLongClick = ButtonEncoderOnLongClick;
 
+    buttonPower.port = POWER_BTN_MCU_GPIO_Port;
+    buttonPower.pin = POWER_BTN_MCU_Pin;
+    buttonPower.edge = true;
+    buttonPower.longClickMs = 500;
+    buttonPower.OnClick = ButtonPowerOnClick;
+    buttonPower.OnLongClick = ButtonPowerOnLongClick;
+
+    buttonIrq.Add(&buttonEncoder);
+    buttonIrq.Add(&buttonPower);
+
+    // HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
 }
 
 void Main()
@@ -156,67 +171,26 @@ void Main()
     }
 
     if (hakkoT12MoveIrq)
-	{
-		if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - hakkoT12MoveMs > 1)
+    {
+        if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - hakkoT12MoveMs > 1)
             control.CallbackHakkoT12Move();
-		hakkoT12MoveIrq = false;
-	}
+        hakkoT12MoveIrq = false;
+    }
     if (solderHandMoveIrq)
-	{
-		if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - solderHandMoveMs > 1)
+    {
+        if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - solderHandMoveMs > 1)
             control.CallbackSolderHandMove();
-		solderHandMoveIrq = false;
-	}
+        solderHandMoveIrq = false;
+    }
     if (hairGunStandIrq)
-	{
-		if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - hairGunStandMs > 1)
+    {
+        if (!HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin) && HAL_GetTick() - hairGunStandMs > 1)
             control.CallbackHairGunStand(HAL_GPIO_ReadPin(T12_MOVE_GPIO_Port, T12_MOVE_Pin));
-		hairGunStandIrq = false;
-	}
+        hairGunStandIrq = false;
+    }
 
     control.Process();
-
-    if (btnEncoderIrq)
-    {
-        if (HAL_GPIO_ReadPin(ENC_SW_GPIO_Port, ENC_SW_Pin))
-        {
-
-            if (HAL_GetTick() - btnEncoderPushedMs <= 500)
-            {
-                hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonClick(ENC_SW_Pin);
-                buzzer.Beep(4);
-            }
-            else
-            {
-                hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonLongClick(ENC_SW_Pin);
-                buzzer.Beep(100);
-            }
-            btnEncoderIrq = false;
-        }
-    }
-    if (btnPowerIrq)
-    {
-        if (HAL_GPIO_ReadPin(POWER_BTN_MCU_GPIO_Port, POWER_BTN_MCU_Pin))
-        {
-            if (HAL_GetTick() - btnPowerPushedMs < 500)
-            {
-                if (hierarchy->GetSelectedItemId() == SCREEN_MAIN)
-                    hierarchy->SetSelectedItem(SCREEN_CONFIG);
-                else if (hierarchy->GetSelectedItemId() == SCREEN_CONFIG)
-                    hierarchy->SetSelectedItem(SCREEN_MAIN);
-                buzzer.Beep(10);
-            }
-            else
-            {
-                // if (HAL_GPIO_ReadPin(POWER_ON_GPIO_Port, POWER_ON_Pin))
-				// 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
-				// else
-				// 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
-                buzzer.Beep(200);
-            }
-            btnPowerIrq = false;
-        }
-    }
+    buttonIrq.Process();
 
     if (lastEncoderValue / 4 != __HAL_TIM_GET_COUNTER(&htim1) / 4)
     {
@@ -233,18 +207,42 @@ void Main()
     graphicalDriver.SendFrame(&displayBuffer, 0, 0);
 }
 
+void ButtonEncoderOnClick(GPIO_TypeDef *port, uint16_t pin, bool state)
+{
+    hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonClick(ENC_SW_Pin);
+    buzzer.Beep(4);
+}
+
+void ButtonEncoderOnLongClick(GPIO_TypeDef *port, uint16_t pin, bool state)
+{
+    hierarchy->GetItem(hierarchy->GetSelectedItemId())->OnButtonLongClick(ENC_SW_Pin);
+    buzzer.Beep(100);
+}
+
+void ButtonPowerOnClick(GPIO_TypeDef *port, uint16_t pin, bool state)
+{
+    if (hierarchy->GetSelectedItemId() == SCREEN_MAIN)
+        hierarchy->SetSelectedItem(SCREEN_CONFIG);
+    else if (hierarchy->GetSelectedItemId() == SCREEN_CONFIG)
+        hierarchy->SetSelectedItem(SCREEN_MAIN);
+    buzzer.Beep(10);
+}
+
+void ButtonPowerOnLongClick(GPIO_TypeDef *port, uint16_t pin, bool state)
+{
+    if (state)
+        HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
+    else
+        HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+    buzzer.Beep(200);
+}
+
 void PinCallback(uint16_t GPIO_Pin)
 {
+    buttonIrq.Irq(GPIO_Pin);
+
     switch (GPIO_Pin)
     {
-    case ENC_SW_Pin:
-        btnEncoderPushedMs = HAL_GetTick();
-        btnEncoderIrq = true;
-        break;
-    case POWER_BTN_MCU_Pin:
-        btnPowerPushedMs = HAL_GetTick();
-        btnPowerIrq = true;
-        break;
     case T12_MOVE_Pin:
         hakkoT12MoveMs = HAL_GetTick();
         hakkoT12MoveIrq = true;
