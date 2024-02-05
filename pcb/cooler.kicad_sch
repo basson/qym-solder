@@ -758,7 +758,7 @@
     (pin "1" (uuid 11f823df-8aa2-4b02-9269-485628bd35dd))
     (pin "2" (uuid 47db1931-627c-4c7f-b98c-f8ed305ae43d))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "C28") (unit 1)
         )
@@ -794,7 +794,7 @@
     (pin "2" (uuid 2007f96a-7ebc-40b7-8fdb-df05e153a6d3))
     (pin "3" (uuid 3d4d8cff-b076-4f30-bbdb-45489d11fc62))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "Q10") (unit 1)
         )
@@ -819,7 +819,7 @@
     )
     (pin "1" (uuid 756cd98d-ae5f-4c69-8163-73574385ac29))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "#PWR0112") (unit 1)
         )
@@ -845,7 +845,7 @@
     (pin "1" (uuid 6c37eeb4-9d66-4667-a2ca-2aebb0bd65d8))
     (pin "2" (uuid 7983ccd6-3130-4304-899f-124f6d0fbcd4))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "R50") (unit 1)
         )
@@ -881,7 +881,7 @@
     (pin "2" (uuid 379e8e16-3ab8-4704-94a0-0573b0b7b158))
     (pin "3" (uuid eef45e02-2aa4-4df3-ada5-0ce43ac71ccd))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "Q11") (unit 1)
         )
@@ -907,7 +907,7 @@
     (pin "1" (uuid 052462cf-19b1-4397-9de5-d85b4c439b66))
     (pin "2" (uuid 4b53ae1a-55a4-4fb6-aa3d-bde1588cdca9))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "D6") (unit 1)
         )
@@ -933,7 +933,7 @@
     (pin "1" (uuid eaf9cdef-b4e8-4db1-9457-5ceabd31fe72))
     (pin "2" (uuid 10cd205d-581f-4179-919e-94d88aa09f0a))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "R48") (unit 1)
         )
@@ -959,7 +959,7 @@
     (pin "1" (uuid 51893f42-ef28-468c-99dc-fa199650ad08))
     (pin "2" (uuid 83082bc0-574d-4641-97a0-f903e01b5e31))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "R49") (unit 1)
         )
@@ -984,7 +984,7 @@
     )
     (pin "1" (uuid 749e091e-8894-4fb6-8c7f-6a1eaa8d5dde))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "#PWR0111") (unit 1)
         )
@@ -1010,7 +1010,7 @@
     (pin "1" (uuid b5c0fce7-d370-4c1c-b185-fdd1952e2953))
     (pin "2" (uuid e97b4dc0-d003-4396-a9f2-2c38f5d05f24))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "R47") (unit 1)
         )
@@ -1045,7 +1045,7 @@
     (pin "1" (uuid a9e91deb-f60b-4126-a63a-bcd766d1a579))
     (pin "2" (uuid 48eed09a-44d0-4c2b-b60e-df38f03227d4))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "CN9") (unit 1)
         )
@@ -1070,7 +1070,7 @@
     )
     (pin "1" (uuid 468fce1d-847b-4980-9f0c-86503c93cd45))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "#PWR0110") (unit 1)
         )
@@ -1095,7 +1095,7 @@
     )
     (pin "1" (uuid ac9cff35-6a09-49da-9331-0497cc2dd38e))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "#PWR0113") (unit 1)
         )
@@ -1120,7 +1120,7 @@
     )
     (pin "1" (uuid a6dd4c3d-9ff4-46df-8a54-26d72c1d33e9))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "#PWR0114") (unit 1)
         )
@@ -1146,7 +1146,7 @@
     (pin "1" (uuid e591d555-9ad1-4934-b93f-e95e63308c0f))
     (pin "2" (uuid 6fe57596-528f-41ab-b125-d7441ae9f568))
     (instances
-      (project "qsolder_pcb"
+      (project "pcb"
         (path "/484c7117-151d-4c67-9cf5-351046124522/66e22524-b773-41b9-91de-1050e287a45e"
           (reference "J22") (unit 1)
         )
