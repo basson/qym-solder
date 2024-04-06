@@ -18,10 +18,11 @@ class Control
 public:
     enum State
     {
-        CONTROL_STATE_OFF,
-        CONTROL_STATE_ON,
+        CONTROL_STATE_OFF = 0,
+        CONTROL_STATE_ON = 1,
         CONTROL_STATE_SLEEP,
         CONTROL_STATE_COOLING,
+        
         CONTROL_STATE_MAX,
     };
 

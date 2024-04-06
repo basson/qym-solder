@@ -98,7 +98,10 @@ namespace gui
     {
         if (_isChangeSetTemp)
             return;
-        Control::StateSolderHand(Control::State(!(bool)Control::StateSolderHand()));
+        if (Control::StateSolderHand() == Control::State::CONTROL_STATE_ON)
+            Control::StateSolderHand(Control::State::CONTROL_STATE_OFF);
+        else
+            Control::StateSolderHand(Control::State::CONTROL_STATE_ON);
     }
     void ScreenSolderHand::OnButtonLongClick()
     {

@@ -59,9 +59,9 @@ namespace gui
             break;
         }
 
-        if(_isChange)
+        if (_isChange)
             _iconHeat.Visible(true);
-        
+
         if (_isChangeSetTemp)
         {
             showTemp = _emem->Param().hairSetTemp;
@@ -141,6 +141,7 @@ namespace gui
         itoa(_emem->Param().hairSetFlow, buf, 10);
         strcat(_strFlowSet, buf);
         strcat(_strFlowSet, "%");
+        itoa((int)Control::StateHairGun(), _strFlowSet, 10);
         _textFlowSet.SetText(_strFlowSet);
     }
 
@@ -186,7 +187,12 @@ namespace gui
         }
         else
         {
-            Control::StateHairGun(Control::State(!(bool)Control::StateHairGun()));
+            if (Control::StateHairGun() == Control::State::CONTROL_STATE_ON)
+                Control::StateHairGun(Control::State::CONTROL_STATE_OFF);
+            else
+                Control::StateHairGun(Control::State::CONTROL_STATE_ON);
+
+            // Control::StateHairGun(Control::State(!(bool)Control::StateHairGun()));
         }
     }
     void ScreenHAirGun::OnButtonLongClick()

@@ -115,21 +115,10 @@ void Initialize()
     hierarchy->SetSelectedItem(SCREEN_MAIN);
     // hierarchy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
 
-    // buzzer.Beep(10);
+    HAL_Delay(200);
+    HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
 
-    // HAL_Delay(100);
 
-    // if (!HAL_GPIO_ReadPin(POWER_BTN_MCU_GPIO_Port, POWER_BTN_MCU_Pin))
-    // {
-    // 	HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
-    //     buzzer.Beep(80);
-    //     HAL_Delay(20);
-    //     buzzer.Beep(40);
-    //     HAL_Delay(20);
-    //     buzzer.Beep(40);
-    //     HAL_Delay(20);
-    //     buzzer.Beep(40);
-    // }
 
     buttonEncoder.port = ENC_SW_GPIO_Port;
     buttonEncoder.pin = ENC_SW_Pin;
@@ -145,10 +134,15 @@ void Initialize()
     buttonPower.OnClick = ButtonPowerOnClick;
     buttonPower.OnLongClick = ButtonPowerOnLongClick;
 
+    
     buttonIrq.Add(&buttonEncoder);
     buttonIrq.Add(&buttonPower);
+    
 
     // HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+
+    // TIM2->CCR1 = 3999/2;
+    // HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 }
 
 void Main()
@@ -223,18 +217,24 @@ void ButtonPowerOnClick(GPIO_TypeDef *port, uint16_t pin, bool state)
 {
     if (hierarchy->GetSelectedItemId() == SCREEN_MAIN)
         hierarchy->SetSelectedItem(SCREEN_CONFIG);
-    else if (hierarchy->GetSelectedItemId() == SCREEN_CONFIG)
+    else
         hierarchy->SetSelectedItem(SCREEN_MAIN);
-    buzzer.Beep(10);
+    buzzer.Beep(100);
 }
 
 void ButtonPowerOnLongClick(GPIO_TypeDef *port, uint16_t pin, bool state)
 {
-    if (state)
-        HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
-    else
+    if(HAL_GPIO_ReadPin(POWER_ON_GPIO_Port, POWER_ON_Pin) == GPIO_PIN_RESET)
+    {
         HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
-    buzzer.Beep(200);
+        buzzer.Beep(1000);
+    }
+    else
+    {
+        HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
+        buzzer.Beep(200);
+    }
+    
 }
 
 void PinCallback(uint16_t GPIO_Pin)

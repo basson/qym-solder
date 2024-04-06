@@ -45,6 +45,10 @@ void Control::Initialize()
     _pidDataHairGun.OutputMin = 0;
     _pidDataHairGun.OutputMax = 3999;
     _pidDataHairGun.SampleTimeMs = 4;
+
+    TIM4->CCR4 = 0;
+    TIM4->CCR3 = 0;
+    TIM4->CCR1 = 3999;
 }
 
 void Control::Process()
@@ -70,10 +74,10 @@ void Control::CallbackSolderHandMove()
 }
 void Control::CallbackHairGunStand(bool direction)
 {
-    if(direction)
-        _stateHairGun = CONTROL_STATE_ON;
-    else
-        _stateHairGun = CONTROL_STATE_OFF;
+    // if (direction)
+    //     _stateHairGun = CONTROL_STATE_ON;
+    // else
+    //     _stateHairGun = CONTROL_STATE_OFF;
 }
 
 void Control::SetAdcNtcHakkoT12(uint16_t value)
@@ -112,7 +116,7 @@ uint16_t Control::GetCurrentTempHairGun()
 
 Control::State Control::StateHakkoT12(Control::State state)
 {
-    if (state > 1)
+    if (state == CONTROL_STATE_MAX)
         return _stateHakkoT12;
     _stateHakkoT12 = state;
     _trigger.hakkoT12 = true;
@@ -120,7 +124,7 @@ Control::State Control::StateHakkoT12(Control::State state)
 }
 Control::State Control::StateSolderHand(Control::State state)
 {
-    if (state > 1)
+    if (state == CONTROL_STATE_MAX)
         return _stateSolderHand;
     _stateSolderHand = state;
     _trigger.solderHand = true;
@@ -128,7 +132,7 @@ Control::State Control::StateSolderHand(Control::State state)
 }
 Control::State Control::StateHairGun(Control::State state)
 {
-    if (state > 1)
+    if (state == CONTROL_STATE_MAX)
         return _stateHairGun;
     _stateHairGun = state;
     _trigger.hairGun = true;
@@ -137,102 +141,105 @@ Control::State Control::StateHairGun(Control::State state)
 
 void Control::ProcessHakktoT12()
 {
-    // uint16_t _filterAdc = 0;
-    // GetAdcCoupleHakkoT12();
+    uint16_t _filterAdc = 0;
+    GetAdcCoupleHakkoT12();
 
-    // _medianHakkoT12.Set(_adcCoupleHacckoT12);
-    // _emaHakkoT12.Set(_medianHakkoT12.Get());
-    // _filterAdc = _emaHakkoT12.Get();
-    // _currentTempHakkoT12 = 0.1320134f * _filterAdc + 21.43212233f;
+    _medianHakkoT12.Set(_adcCoupleHacckoT12);
+    _emaHakkoT12.Set(_medianHakkoT12.Get());
+    _filterAdc = _emaHakkoT12.Get();
+    _currentTempHakkoT12 = 0.1320134f * _filterAdc + 21.43212233f;
 
-    // if (_stateHakkoT12 == CONTROL_STATE_OFF && !_trigger.solderHand)
-    //     return;
+    if (_stateHakkoT12 == CONTROL_STATE_OFF && !_trigger.solderHand)
+        return;
 
-    // _timerHakkoT12.Process();
-    // if (_timerHakkoT12.Elapsed())
-    // {
-    //     _stateHakkoT12 = CONTROL_STATE_SLEEP;
-    // }
+    _timerHakkoT12.Process();
+    if (_timerHakkoT12.Elapsed())
+    {
+        _stateHakkoT12 = CONTROL_STATE_SLEEP;
+    }
 
-    // if (_stateHakkoT12 == CONTROL_STATE_SLEEP)
-    //     _pidDataHakkoT12.Point = _emem->Param().t12TempSleep;
-    // else
-    //     _pidDataHakkoT12.Point = _emem->Param().t12SetTemp;
+    if (_stateHakkoT12 == CONTROL_STATE_SLEEP)
+        _pidDataHakkoT12.Point = _emem->Param().t12TempSleep;
+    else
+        _pidDataHakkoT12.Point = _emem->Param().t12SetTemp;
 
-    // _pidDataHakkoT12.Kp = _emem->Param().t12Kp;
-    // _pidDataHakkoT12.Ki = _emem->Param().t12Ki;
-    // _pidDataHakkoT12.Kd = _emem->Param().t12Kd;
+    _pidDataHakkoT12.Kp = _emem->Param().t12Kp;
+    _pidDataHakkoT12.Ki = _emem->Param().t12Ki;
+    _pidDataHakkoT12.Kd = _emem->Param().t12Kd;
+    _pidDataHakkoT12.Inpit = _currentTempHakkoT12;
 
-    // qymos::common::Pid::SetData(&_pidDataHakkoT12);
-    // qymos::common::Pid::Process();
+    qymos::common::Pid::SetData(&_pidDataHakkoT12);
+    qymos::common::Pid::Process();
 
-    // TIM4->CCR4 = _pidDataHakkoT12.Output;
 
-    // if (_trigger.hakkoT12)
-    // {
-    //     if (_stateHakkoT12 == CONTROL_STATE_ON)
-    //     {
-    //         HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
-    //         _timerHakkoT12.SetInterval((_emem->Param().t12TimeSleep[0] * 60 * 60 + _emem->Param().t12TimeSleep[1] * 60 + _emem->Param().t12TimeSleep[0]) * 1000);
-    //         _timerHakkoT12.On();
-    //     }
-    //     else
-    //     {
-    //         _stateHakkoT12 = CONTROL_STATE_OFF;
-    //         HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_4);
-    //         _timerHakkoT12.Off();
-    //     }
-    //     _trigger.hakkoT12 = false;
-    // }
+    TIM4->CCR4 = _pidDataHakkoT12.Output;
+
+    if (_trigger.hakkoT12)
+    {
+        if (_stateHakkoT12 == CONTROL_STATE_ON)
+        {
+            HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+            _timerHakkoT12.SetInterval((_emem->Param().t12TimeSleep[0] * 60 * 60 + _emem->Param().t12TimeSleep[1] * 60 + _emem->Param().t12TimeSleep[0]) * 1000);
+            _timerHakkoT12.On();
+        }
+        else
+        {
+            _stateHakkoT12 = CONTROL_STATE_OFF;
+            HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_4);
+            _timerHakkoT12.Off();
+        }
+        _trigger.hakkoT12 = false;
+    }
 }
 void Control::ProcessSolderHand()
 {
-    // uint16_t _filterAdc = 0;
+    uint16_t _filterAdc = 0;
 
-    // _medianSolderHand.Set(_adcCoupleSolderHand);
-    // _emaSolderHand.Set(_medianSolderHand.Get());
-    // _filterAdc = _emaSolderHand.Get();
-    // _currentTempSolderHand = 0.1320134f * _filterAdc + 21.43212233f;
+    _medianSolderHand.Set(_adcCoupleSolderHand);
+    _emaSolderHand.Set(_medianSolderHand.Get());
+    _filterAdc = _emaSolderHand.Get();
+    _currentTempSolderHand = 0.1320134f * _filterAdc + 21.43212233f;
 
-    // if (_stateSolderHand == CONTROL_STATE_OFF &&  !_trigger.solderHand)
-    //     return;
+    if (_stateSolderHand == CONTROL_STATE_OFF && !_trigger.solderHand)
+        return;
 
-    // _timerSolderHand.Process();
-    // if (_timerSolderHand.Elapsed())
-    // {
-    //     _stateSolderHand = CONTROL_STATE_SLEEP;
-    // }
+    _timerSolderHand.Process();
+    if (_timerSolderHand.Elapsed())
+    {
+        _stateSolderHand = CONTROL_STATE_SLEEP;
+    }
 
-    // if (_stateSolderHand == CONTROL_STATE_SLEEP)
-    //     _pidDataSolderHand.Point = _emem->Param().ironTempSleep;
-    // else
-    //     _pidDataSolderHand.Point = _emem->Param().ironSetTemp;
+    if (_stateSolderHand == CONTROL_STATE_SLEEP)
+        _pidDataSolderHand.Point = _emem->Param().ironTempSleep;
+    else
+        _pidDataSolderHand.Point = _emem->Param().ironSetTemp;
 
-    // _pidDataSolderHand.Kp = _emem->Param().ironKp;
-    // _pidDataSolderHand.Ki = _emem->Param().ironKi;
-    // _pidDataSolderHand.Kd = _emem->Param().ironKd;
+    _pidDataSolderHand.Kp = _emem->Param().ironKp;
+    _pidDataSolderHand.Ki = _emem->Param().ironKi;
+    _pidDataSolderHand.Kd = _emem->Param().ironKd;
+    _pidDataSolderHand.Inpit = _currentTempSolderHand;
 
-    // qymos::common::Pid::SetData(&_pidDataSolderHand);
-    // qymos::common::Pid::Process();
+    qymos::common::Pid::SetData(&_pidDataSolderHand);
+    qymos::common::Pid::Process();
 
-    // TIM4->CCR3 = _pidDataSolderHand.Output;
+    TIM4->CCR3 = _pidDataSolderHand.Output;
 
-    // if (_trigger.solderHand)
-    // {
-    //     if (_stateSolderHand == CONTROL_STATE_ON)
-    //     {
-    //         HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-    //         _timerSolderHand.SetInterval((_emem->Param().ironTimeSleep[0] * 60 * 60 + _emem->Param().ironTimeSleep[1] * 60 + _emem->Param().ironTimeSleep[0]) * 1000);
-    //         _timerSolderHand.On();
-    //     }
-    //     else
-    //     {
-    //         _stateSolderHand = CONTROL_STATE_OFF;
-    //         HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-    //         _timerSolderHand.Off();
-    //     }
-    //     _trigger.solderHand = false;
-    // }
+    if (_trigger.solderHand)
+    {
+        if (_stateSolderHand == CONTROL_STATE_ON)
+        {
+            HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+            _timerSolderHand.SetInterval((_emem->Param().ironTimeSleep[0] * 60 * 60 + _emem->Param().ironTimeSleep[1] * 60 + _emem->Param().ironTimeSleep[0]) * 1000);
+            _timerSolderHand.On();
+        }
+        else
+        {
+            _stateSolderHand = CONTROL_STATE_OFF;
+            HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+            _timerSolderHand.Off();
+        }
+        _trigger.solderHand = false;
+    }
 }
 
 void Control::ProcessHairGun()
@@ -243,33 +250,49 @@ void Control::ProcessHairGun()
     _filterAdc = _emaHairGun.Get();
     _currentTempHairGun = 0.10779499 * _filterAdc + 19.11698252;
 
-    if(_stateHairGun != CONTROL_STATE_ON && _currentTempHairGun >= 50)
+    if (_stateHairGun != CONTROL_STATE_ON && _currentTempHairGun >= 50)
         _stateHairGun = CONTROL_STATE_COOLING;
-    
+
     if (_stateHairGun == CONTROL_STATE_COOLING)
     {
         if (_currentTempHairGun >= 50)
+        {
+            HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
             TIM4->CCR2 = 3999;
+        }
         if (_currentTempHairGun <= 37)
         {
             HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_2);
+            _stateHairGun = CONTROL_STATE_OFF;
         }
     }
 
-    if (_stateSolderHand == CONTROL_STATE_OFF && !_trigger.hairGun)
-        return;
+    // if (_stateHairGun == CONTROL_STATE_OFF && !_trigger.hairGun)
+    //     return;
 
-    TIM4->CCR2 = (((float)3999 / 100) * _emem->Param().hairSetFlow);
+    if (_stateHairGun == CONTROL_STATE_ON)
+    {
 
-    _pidDataHairGun.Point = _emem->Param().hairSetTemp;
+        TIM4->CCR2 = (((float)3999 / 100) * _emem->Param().hairSetFlow);
 
-    _pidDataHairGun.Kp = _emem->Param().hairKp;
-    _pidDataHairGun.Ki = _emem->Param().hairKi;
-    _pidDataHairGun.Kd = _emem->Param().hairKd;
+        _pidDataHairGun.Point = _emem->Param().hairSetTemp;
 
-    qymos::common::Pid::SetData(&_pidDataHairGun);
-    qymos::common::Pid::Process();
-    TIM4->CCR1 = 3999 - _pidDataHairGun.Output;
+        _pidDataHairGun.Kp = _emem->Param().hairKp;
+        _pidDataHairGun.Ki = _emem->Param().hairKi;
+        _pidDataHairGun.Kd = _emem->Param().hairKd;
+        _pidDataHairGun.Inpit = _currentTempHairGun;
+
+        qymos::common::Pid::SetData(&_pidDataHairGun);
+        qymos::common::Pid::Process();
+
+        TIM4->CCR1 = 3999 - _pidDataHairGun.Output;
+    }
+    else
+    {
+        _pidDataHairGun.Integral = 0;
+        _pidDataHairGun.Error = 0;
+        TIM4->CCR1 = 3999;
+    }
 
     if (_trigger.hairGun)
     {
