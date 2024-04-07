@@ -2,6 +2,9 @@
 
 enum Screen
 {
+    SCREEN_SHUTDOWN,
+    SCREEN_ERROR,
+    
     SCREEN_MAIN,
     
     SCREEN_CONFIG,

@@ -141,8 +141,6 @@ namespace gui
         itoa(_emem->Param().hairSetFlow, buf, 10);
         strcat(_strFlowSet, buf);
         strcat(_strFlowSet, "%");
-        itoa((int)Control::StateHairGun(), _strFlowSet, 10);
-        _textFlowSet.SetText(_strFlowSet);
     }
 
     void ScreenHAirGun::OnEncoderDirection(bool direction)

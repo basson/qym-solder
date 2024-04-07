@@ -22,6 +22,7 @@
 #include "screens.hpp"
 
 #include "screens/startup.hpp"
+#include "screens/shutdown.hpp"
 #include "screens/main.hpp"
 #include "screens/config.hpp"
 #include "screens/config/default.hpp"
@@ -48,6 +49,8 @@ qymos::gui::DisplayBuffer displayBuffer;
 
 qymos::gui::Hierarchy *hierarchy = qymos::gui::Hierarchy::GetInstance();
 
+gui::ScreenStartup screenStartup;
+gui::ScreenShutdown screenShutdown;
 gui::ScreenMain screenMain;
 gui::ScreenConfig screenConfig;
 gui::ScreenConfigDefault screenConfigDefault;
@@ -71,7 +74,8 @@ volatile bool hairGunStandIrq = false;
 volatile uint32_t hairGunStandMs = 0;
 
 void CreateHierarchy()
-{
+{   
+    hierarchy->AddItem(SCREEN_SHUTDOWN, SCREEN_SHUTDOWN, &screenShutdown);
     hierarchy->AddItem(SCREEN_MAIN, SCREEN_MAIN, &screenMain);
     hierarchy->AddItem(SCREEN_CONFIG, SCREEN_MAIN, &screenConfig);
     hierarchy->AddItem(SCREEN_CONFIG_DEFAULT, SCREEN_CONFIG, &screenConfigDefault);
@@ -83,6 +87,8 @@ void CreateHierarchy()
 
 void Initialize()
 {
+    HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+
     HAL_ADCEx_Calibration_Start(&hadc1);
     HAL_ADCEx_Calibration_Start(&hadc2);
 
@@ -110,15 +116,17 @@ void Initialize()
     graphicalDriver.SetPort(&hi2c2);
     graphicalDriver.SetResetPin(DSP_RST_GPIO_Port, DSP_RST_Pin);
     graphicalDriver.Initialize();
+
+    screenStartup.GetPage()->Render(&displayBuffer);
+    graphicalDriver.SendFrame(&displayBuffer, 0, 0);
+
     CreateHierarchy();
 
     hierarchy->SetSelectedItem(SCREEN_MAIN);
+
+    HAL_Delay(3000);
+
     // hierarchy->SetSelectedItem(SCREEN_CONFIG_PID_AUTOTUNE);
-
-    HAL_Delay(200);
-    HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
-
-
 
     buttonEncoder.port = ENC_SW_GPIO_Port;
     buttonEncoder.pin = ENC_SW_Pin;
@@ -134,10 +142,8 @@ void Initialize()
     buttonPower.OnClick = ButtonPowerOnClick;
     buttonPower.OnLongClick = ButtonPowerOnLongClick;
 
-    
     buttonIrq.Add(&buttonEncoder);
     buttonIrq.Add(&buttonPower);
-    
 
     // HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
 
@@ -224,17 +230,17 @@ void ButtonPowerOnClick(GPIO_TypeDef *port, uint16_t pin, bool state)
 
 void ButtonPowerOnLongClick(GPIO_TypeDef *port, uint16_t pin, bool state)
 {
-    if(HAL_GPIO_ReadPin(POWER_ON_GPIO_Port, POWER_ON_Pin) == GPIO_PIN_RESET)
-    {
-        HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
-        buzzer.Beep(1000);
-    }
-    else
-    {
-        HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
-        buzzer.Beep(200);
-    }
-    
+    // if (HAL_GPIO_ReadPin(POWER_ON_GPIO_Port, POWER_ON_Pin) == GPIO_PIN_RESET)
+    // {
+    //     HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_SET);
+    //     buzzer.Beep(1000);
+    // }
+    // else
+    // {
+    // HAL_GPIO_WritePin(POWER_ON_GPIO_Port, POWER_ON_Pin, GPIO_PIN_RESET);
+    hierarchy->SetSelectedItem(SCREEN_SHUTDOWN);
+    buzzer.Beep(200);
+    // }
 }
 
 void PinCallback(uint16_t GPIO_Pin)

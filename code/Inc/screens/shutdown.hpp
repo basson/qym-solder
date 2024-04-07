@@ -1,40 +1,47 @@
 #pragma once
 
+
+#include "stm32f1xx_hal.h"
+
 #include "fonts/HellenicaRus16px.h"
 #include "fonts/HellenicaRus12px.h"
 #include "fonts/HellenicaRus8px.h"
 
 #include "icons/Logo15x22px.h"
+#include "icons/Warning24x24px.h"
 
 #include "gui/types.hpp"
 #include "gui/iscreen.hpp"
-
 
 #include "gui/uip/text.hpp"
 #include "gui/uip/bitmap.hpp"
 #include "gui/uie/layout.hpp"
 
+#include "control.hpp"
+
 namespace gui
 {
-    class ScreenStartup : public qymos::gui::IScreen
+    class ScreenShutdown : public qymos::gui::IScreen
     {
     private:
-        char *_strLogo = "qumis.tech";
+        char *_strBye = "Выключение";
+        char *_strWarning = "Охлаждеие";
 
-        qymos::gui::Text _textLogo;
+        qymos::gui::Text _textBye;
 
-        qymos::gui::Bitmap _iconLogo;
+        qymos::gui::Bitmap _icon;
 
         qymos::gui::Layout _layout;
 
     public:
-        ScreenStartup();
+        ScreenShutdown();
         qymos::gui::IElement *GetPage();
         void Process();
         void OnButtonClick(uint16_t pin = 0);
         void OnButtonLongClick(uint16_t pin = 0);
         void OnEncoderDirection(bool direction);
         void OnEncoderValue(uint32_t value);
+        
     };
 
 } // namespace gui
