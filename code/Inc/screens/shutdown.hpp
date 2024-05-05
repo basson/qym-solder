@@ -24,8 +24,8 @@ namespace gui
     class ScreenShutdown : public qymos::gui::IScreen
     {
     private:
-        char *_strBye = "Выключение";
-        char *_strWarning = "Охлаждеие";
+        char _strBye[21] = "Выключение";
+        char _strWarning[21] = "Охлаждение";
 
         qymos::gui::Text _textBye;
 

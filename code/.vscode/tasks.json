@@ -43,5 +43,14 @@
             ],
             "label": "CubeMX: To Main CPP"
         },
+        {
+            "type": "PlatformIO",
+            "task": "Build (genericSTM32F103CB)",
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "group": "build",
+            "label": "PlatformIO: Build (genericSTM32F103CB)"
+        }
     ]
 }

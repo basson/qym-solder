@@ -28,12 +28,12 @@ namespace gui
     class ScreenConfig : public qymos::gui::IScreen
     {
     private:
-        char *_titleStr = "Настройки";
-        char *_strBack = "Назад";
-        char *_strDefault = "Основные";
-        char *_strHacckoT12 = "Hakko t12";
-        char *_strSolderHand = "Solder hand";
-        char *_strHiarGun = "Hotair gun";
+        char _titleStr[19] = "Настройки";
+        char _strBack[11] = "Назад";
+        char _strDefault[17] = "Основные";
+        char _strHacckoT12[10] = "Hakko t12";
+        char _strSolderHand[12] = "Solder hand";
+        char _strHiarGun[11] = "Hotair gun";
         
 
         qymos::gui::Text _titleText;

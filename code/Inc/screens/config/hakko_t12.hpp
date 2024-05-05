@@ -41,22 +41,22 @@ namespace gui
     class ScreenConfigHakkoT12 : public qymos::gui::IScreen
     {
     private:
-        char *_titleStr = "Hakko T12";
+        char _titleStr[10] = "Hakko T12";
 
-        char *_strBack = "Назад";
-        char *_strTempCalibrate = "Калибровка темп.";
-        char *_strTempMin = "Мин. Температура";
-        char *_strTempMax = "Макс. Температура";
-        char *_strSensorOn = "Сенсор Есть";
-        char *_strSensorOff = "Сенсора Нет";
-        char *_strTimeSleep = "Время погр в сон";
-        char *_strTempSleep = "Темп во время сна";
-        char *_strPidTune = "Калибровка PID";
-        char *_strNtcResistens = "NTC термистр";
+        char _strBack[11] = "Назад";
+        char _strTempCalibrate[31] = "Калибровка темп.";
+        char _strTempMin[31] = "Мин. Температура";
+        char _strTempMax[33] = "Макс. Температура";
+        char _strSensorOn[22] = "Сенсор Есть";
+        char _strSensorOff[22] = "Сенсора Нет";
+        char _strTimeSleep[30] = "Время погр в сон";
+        char _strTempSleep[32] = "Темп во время сна";
+        char _strPidTune[32] = "Калибровка PID";
+        char _strNtcResistens[21] = "NTC термистр";
 
-        char *_strSelectNtcNone = "Нет";
-        char *_strSelectNtc10K = "10К";
-        char *_strSelectNtc100k = "100K";
+        char _strSelectNtcNone[7] = "Нет";
+        char _strSelectNtc10K[5] = "10К";
+        char _strSelectNtc100k[5] = "100K";
 
         qymos::gui::Text _titleText;
         qymos::gui::Text _textBack;

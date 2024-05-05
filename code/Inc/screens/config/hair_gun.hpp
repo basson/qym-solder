@@ -39,22 +39,22 @@ namespace gui
     class ScreenConfigHairGun : public qymos::gui::IScreen
     {
     private:
-        char *_titleStr = "Hair Gun";
+        char _titleStr[9] = "Hair Gun";
 
-        char *_strBack = "Назад";
-        char *_strTempCalibrate = "Калибровка темп.";
-        char *_strTempMin = "Мин. Температура";
-        char *_strTempMax = "Макс. Температура";
-        char *_strFlowMin = "Мин. Поток";
-        char *_strFlowMax = "Макс. Поток";
-        char *_strSensorOn = "Сенсор Есть";
-        char *_strSensorOff = "Сенсора Нет";
-        char *_strPidTune = "Калибровка PID";
-        char *_strNtcResistens = "NTC термистр";
+        char _strBack[11] = "Назад";
+        char _strTempCalibrate[31] = "Калибровка темп.";
+        char _strTempMin[31] = "Мин. Температура";
+        char _strTempMax[33] = "Макс. Температура";
+        char _strFlowMin[19] = "Мин. Поток";
+        char _strFlowMax[21] = "Макс. Поток";
+        char _strSensorOn[22] = "Сенсор Есть";
+        char _strSensorOff[22] = "Сенсора Нет";
+        char _strPidTune[25] = "Калибровка PID";
+        char _strNtcResistens[21] = "NTC термистр";
 
-        char *_strSelectNtcNone = "Нет";
-        char *_strSelectNtc10K = "10К";
-        char *_strSelectNtc100k = "100K";
+        char _strSelectNtcNone[7] = "Нет";
+        char _strSelectNtc10K[5] = "10К";
+        char _strSelectNtc100k[5] = "100K";
 
         qymos::gui::Text _titleText;
         qymos::gui::Text _textBack;

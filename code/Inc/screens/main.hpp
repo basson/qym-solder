@@ -23,9 +23,9 @@ namespace gui
     class ScreenMain : public qymos::gui::IScreen
     {
     private:
-        char *_strT12 = "T12";
-        char *_strHair = "HAIR";
-        char *_strIron = "IRON";
+        char _strT12[4] = "T12";
+        char _strHair[5] = "HAIR";
+        char _strIron[5] = "IRON";
 
         qymos::gui::Text _textT12;
         qymos::gui::Text _textHair;

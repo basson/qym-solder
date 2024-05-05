@@ -36,29 +36,29 @@ namespace gui
     class ScreenConfigDefault : public qymos::gui::IScreen
     {
     private:
-        char *_titleStr = "Основные";
+        char _titleStr[17] = "Основные";
 
-        char *_strBack = "Назад";
-        char *_strTimeOff = "Время откл";
-        char *_strTimeShutdown = "Время выкл";
-        char *_strSoundOn = "Звук вкл";
-        char *_strSoundOff = "Звук выкл";
-        char *_strCooling = "Охлаждение";
-        char *_strNtc = "NTC термистр";
-        char *_strResetCfg = "Сбросить настройки";
-        char *_strResetNotification = "Настройки сброшены!";
+        char _strBack[11] = "Назад";
+        char _strTimeOff[20] = "Время откл";
+        char _strTimeShutdown[20] = "Время выкл";
+        char _strSoundOn[16] = "Звук вкл";
+        char _strSoundOff[18] = "Звук выкл";
+        char _strCooling[21] = "Охлаждение";
+        char _strNtc[21] = "NTC термистр";
+        char _strResetCfg[36] = "Сбросить настройки";
+        char _strResetNotification[37] = "Настройки сброшены!";
 
 
-        char *_strSelectCoolingNtc = "Ntc";
-        char *_strSelectCoolingAlways = "Постоянно";
+        char _strSelectCoolingNtc[4] = "Ntc";
+        char _strSelectCoolingAlways[19] = "Постоянно";
 
-        char *_strSelectNtcNone = "Нет";
-        char *_strSelectNtc10K = "10К";
-        char *_strSelectNtc100k = "100K";
+        char _strSelectNtcNone[7] = "Нет";
+        char _strSelectNtc10K[5] = "10К";
+        char _strSelectNtc100k[5] = "100K";
 
-        char *_strResetCfgInputMessage = "Вы уверены?";
-        char *_strResetCfgInputOk = "Да";
-        char *_strResetCfgInputCancel = "Нет";
+        char _strResetCfgInputMessage[21] = "Вы уверены?";
+        char _strResetCfgInputOk[5] = "Да";
+        char _strResetCfgInputCancel[7] = "Нет";
 
         qymos::gui::Text _titleText;
         qymos::gui::Text _textBack;

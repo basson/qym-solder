@@ -19,7 +19,7 @@ namespace gui
     class ScreenStartup : public qymos::gui::IScreen
     {
     private:
-        char *_strLogo = "qumis.tech";
+        char _strLogo[11] = "qumis.tech";
 
         qymos::gui::Text _textLogo;
 

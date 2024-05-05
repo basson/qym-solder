@@ -23,11 +23,11 @@ namespace gui
     class ScreenPidAutoTune : public qymos::gui::IScreen
     {
     private:
-        char *_titleStr = "PID Калибровка";
-        char *_strCurrent = "Cur:200°";
-        char *_strSet = "Set:200°";
+        char _titleStr[25] = "PID Калибровка";
+        char _strCurrent[10] = "Cur:200°";
+        char _strSet[10] = "Set:200°";
 
-        char *_exmpStr = "Идет калибровка...";
+        char _exmpStr[33] = "Идет калибровка...";
     
 
         qymos::gui::Text _titleText;

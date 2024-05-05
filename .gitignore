@@ -12,6 +12,7 @@ pcb/production
 pcb/~pcb.kicad_sch.lck
 pcb/_autosave-pcb.kicad_sch
 pcb/#auto_saved_files#
+pcb/pcb.kicad_sch-bak
 
 # Prerequisites
 *.d
